@@ -1,0 +1,9 @@
+﻿  Globals.cpp
+C:\Users\janso\Documents\GitHub\CSGO-Cheat\CSGO-Cheat\Cheat\Globals.cpp(64,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Entity.cpp
+C:\Users\janso\Documents\GitHub\CSGO-Cheat\CSGO-Cheat\Cheat\Structures\Entity.cpp(91,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Debug.cpp
+C:\Users\janso\Documents\GitHub\CSGO-Cheat\CSGO-Cheat\Debug\Debug.cpp(47,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Main.cpp
+C:\Users\janso\Documents\GitHub\CSGO-Cheat\CSGO-Cheat\Main.cpp(53,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Generating Code...

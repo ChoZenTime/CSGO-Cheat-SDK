@@ -21,6 +21,7 @@ namespace Cheat::Structures
 		
 		[[nodiscard]] bool dormant()             const noexcept;
 		[[nodiscard]] bool hasHelmet()			 const noexcept;
+		
 		[[nodiscard]] float angEyeAngles()       const noexcept;
 		
 		[[nodiscard]] Vec3 aimPunchAngle()       const noexcept;

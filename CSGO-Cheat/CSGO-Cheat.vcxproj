@@ -96,6 +96,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,6 +133,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,13 +161,13 @@
     <ClInclude Include="Cheat\Globals.hpp" />
     <ClInclude Include="Cheat\Offsets\Offsets.h" />
     <ClInclude Include="Cheat\Structures\Entity.hpp" />
-    <ClInclude Include="Debug\Debug.hpp" />
+    <ClInclude Include="Cheat\Debug.hpp" />
     <ClInclude Include="Math\Vectors.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cheat\Globals.cpp" />
     <ClCompile Include="Cheat\Structures\Entity.cpp" />
-    <ClCompile Include="Debug\Debug.cpp" />
+    <ClCompile Include="Cheat\Debug.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
