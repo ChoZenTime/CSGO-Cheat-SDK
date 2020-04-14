@@ -12,7 +12,7 @@
 using namespace Cheat::Structures;
 
 namespace Globals
-{
+{	
 	namespace Offsets
 	{
 		constexpr std::ptrdiff_t dwEntityList = 0x4D42A34;

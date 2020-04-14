@@ -1,5 +1,4 @@
 #include "Globals.hpp"
-
 #include "Debug.hpp"
 
 #include <cstdio>
