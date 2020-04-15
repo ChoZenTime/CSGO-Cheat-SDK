@@ -1,6 +1,6 @@
-﻿  Debug.cpp
-  Globals.cpp
+﻿  Globals.cpp
   Entity.cpp
+  Debug.cpp
   Main.cpp
   Generating Code...
   CSGO-Cheat.vcxproj -> C:\Users\janso\Documents\GitHub\CSGO-Cheat\Debug\CSGO-Cheat.dll
