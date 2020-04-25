@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSGO-Cheat", "CSGO-Cheat\CSGO-Cheat.vcxproj", "{9196E8F9-1CA2-4D94-95A3-1BA106E8E6A5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLL-Injector", "DLL-Injector\DLL-Injector.vcxproj", "{461644C3-BA44-434B-870E-AE547F783837}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{9196E8F9-1CA2-4D94-95A3-1BA106E8E6A5}.Release|x64.Build.0 = Release|x64
 		{9196E8F9-1CA2-4D94-95A3-1BA106E8E6A5}.Release|x86.ActiveCfg = Release|Win32
 		{9196E8F9-1CA2-4D94-95A3-1BA106E8E6A5}.Release|x86.Build.0 = Release|Win32
+		{461644C3-BA44-434B-870E-AE547F783837}.Debug|x64.ActiveCfg = Debug|x64
+		{461644C3-BA44-434B-870E-AE547F783837}.Debug|x64.Build.0 = Debug|x64
+		{461644C3-BA44-434B-870E-AE547F783837}.Debug|x86.ActiveCfg = Debug|Win32
+		{461644C3-BA44-434B-870E-AE547F783837}.Debug|x86.Build.0 = Debug|Win32
+		{461644C3-BA44-434B-870E-AE547F783837}.Release|x64.ActiveCfg = Release|x64
+		{461644C3-BA44-434B-870E-AE547F783837}.Release|x64.Build.0 = Release|x64
+		{461644C3-BA44-434B-870E-AE547F783837}.Release|x86.ActiveCfg = Release|Win32
+		{461644C3-BA44-434B-870E-AE547F783837}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -157,18 +157,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cheat\Cheat.hpp" />
     <ClInclude Include="Cheat\Configuration.hpp" />
-    <ClInclude Include="Cheat\Globals.hpp" />
-    <ClInclude Include="Cheat\Offsets\Offsets.h" />
-    <ClInclude Include="Cheat\Structures\Entity.hpp" />
     <ClInclude Include="Cheat\Debug.hpp" />
+    <ClInclude Include="Cheat\Memory.hpp" />
     <ClInclude Include="Math\Vectors.h" />
+    <ClInclude Include="SDK\Entity.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cheat\Globals.cpp" />
-    <ClCompile Include="Cheat\Structures\Entity.cpp" />
+    <ClCompile Include="Cheat\Cheat.cpp" />
     <ClCompile Include="Cheat\Debug.cpp" />
+    <ClCompile Include="Cheat\Memory.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SDK\Entity.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

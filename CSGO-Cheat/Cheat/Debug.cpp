@@ -1,8 +1,26 @@
-#include "Globals.hpp"
 #include "Debug.hpp"
+#include "Configuration.hpp"
 
 #include <cstdio>
 #include <iostream>
+
+void Debug::main()
+{
+    if (Configuration::debugPrint)
+    {
+        if (!AllocConsole())
+        {
+            freeModule();
+        }
+
+        setDebugConsole();
+    }
+
+    // TODO: Add debug checks
+
+    printDebugInfo();
+
+}
 
 void Debug::freeModule()
 {
@@ -19,10 +37,10 @@ void Debug::setDebugConsole()
     freopen_s(&file, "CONIN$",  "r", stdin);
     std::cout.clear(); std::clog.clear(); std::cerr.clear(); std::cin.clear();
 
-    const auto outputHandle = CreateFile(L"CONOUT$", GENERIC_READ | GENERIC_WRITE,
+    auto *const outputHandle = CreateFile(L"CONOUT$", GENERIC_READ | GENERIC_WRITE,
         FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING,
         FILE_ATTRIBUTE_NORMAL, nullptr);
-    const auto inputHandle = CreateFile(L"CONIN$", GENERIC_READ | GENERIC_WRITE,
+    auto* const inputHandle = CreateFile(L"CONIN$", GENERIC_READ | GENERIC_WRITE,
         FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_EXISTING,
         FILE_ATTRIBUTE_NORMAL, nullptr);
 
@@ -33,15 +51,5 @@ void Debug::setDebugConsole()
 
 void Debug::printDebugInfo()
 {
-    printf("entity list: %p\n", Globals::entityList);
-
-    const auto entity = Globals::entityList->entity(0);
-
-    if (!entity)
-    {
-        printf("[-] Could not retrieve the first entity\n");
-        return;
-    }
-
-    printf("First entity:\nhealth: %i\nteam: %i\nhelmet: %s\n", entity->health(), entity->teamNum(), entity->hasHelmet() ? "true" : "false");
+    // TODO: Add debug info
 }
