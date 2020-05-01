@@ -1,9 +1,9 @@
 #pragma once
 
+// https://github.com/ValveSoftware/source-sdk-2013/blob/master/sp/src/tier1/interface.cpp
+
 #include <Windows.h>
 #include <cstdint>
-
-// https://github.com/ValveSoftware/source-sdk-2013/blob/master/sp/src/tier1/interface.cpp
 
 namespace Cheat::SDK::Misc
 {

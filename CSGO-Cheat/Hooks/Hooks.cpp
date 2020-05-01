@@ -4,11 +4,11 @@
 
 namespace Cheat::Core::Hooks
 {
-	std::unique_ptr< SDK::Misc::VmtHook > client;
-	std::unique_ptr< SDK::Misc::VmtHook > clientMode;
-	std::unique_ptr< SDK::Misc::VmtHook > renderView;
-	std::unique_ptr< SDK::Misc::VmtHook > sound;
-	std::unique_ptr< SDK::Misc::VmtHook > panel;
+	std::unique_ptr<SDK::Misc::VmtHook> client;
+	std::unique_ptr<SDK::Misc::VmtHook> clientMode;
+	std::unique_ptr<SDK::Misc::VmtHook> renderView;
+	std::unique_ptr<SDK::Misc::VmtHook> sound;
+	std::unique_ptr<SDK::Misc::VmtHook> panel;
 
 	void createHooks()
 	{
@@ -24,9 +24,10 @@ namespace Cheat::Core::Hooks
 
 		SETUP_HOOK(renderView, Interface::getInterfaces.renderView);
 		if (renderView) HOOK_FUNCTION(renderView, 9, sceneEnd);
+		
 		SETUP_HOOK(sound, Interface::getInterfaces.sound);
-
 		if (sound) HOOK_FUNCTION(sound, 5, emitSound);
+		
 		SETUP_HOOK(panel, Interface::getInterfaces.panel);
 		if (panel) HOOK_FUNCTION(panel, 41, paintTraverse);
 	}

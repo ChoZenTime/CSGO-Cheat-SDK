@@ -1,6 +1,5 @@
 #include "Render.hpp"
 #include "Macros.hpp"
-
 #include "../../Cheat/Configuration.hpp"
 
 namespace Cheat::SDK::Misc
@@ -80,13 +79,15 @@ namespace Cheat::SDK::Misc
 
 	void coloredGradient(const std::int32_t x, const std::int32_t y, const std::int32_t w, const std::int32_t h, const fgui::color firstColor, const fgui::color secondColor, const bool isHorizontal)
 	{
-		if (isHorizontal) {
+		if (isHorizontal) 
+		{
 			rectangle(x, y, w, h, firstColor);
 
 			for (auto i = 0; i < w; i++)
 				rectangle(x + i, y, 1, h, fgui::color(secondColor.m_red, secondColor.m_red, secondColor.m_blue, i / w * 255));
 		}
-		else {
+		else 
+		{
 			rectangle(x, y, w, h, firstColor);
 
 			for (auto i = 0; i < w; i++)
@@ -96,8 +97,10 @@ namespace Cheat::SDK::Misc
 
 	void getAlphaValue(const std::int32_t x, const std::int32_t y, const std::int32_t w, const std::int32_t h)
 	{
-		for (auto i = 0; i < h / 5; i++) {
-			for (auto t = 0; t < w / 5; t++) {
+		for (auto i = 0; i < h / 5; i++) 
+		{
+			for (auto t = 0; t < w / 5; t++) 
+			{
 				const auto pixel = static_cast<std::int32_t>(std::roundf(t));
 				const auto line = static_cast<std::int32_t>(std::roundf(i));
 				const auto isBrickLight = line % 2 ? pixel % 2 : pixel % 2 == 0;
@@ -134,7 +137,8 @@ namespace Cheat::SDK::Misc
 		fonts.push_back(CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark));
 		fonts.push_back(CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals));
 
-		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark)], Configuration::watermarkFont);
-		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals)], Configuration::visualsFont);
+		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals)], Configuration::visualsFont, Configuration::visualsSize, fgui::external::font_flags::SHADOW, false);
+		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark)], Configuration::watermarkFont, Configuration::watermarkSize, fgui::external::font_flags::SHADOW, false);
+		
 	}
 }

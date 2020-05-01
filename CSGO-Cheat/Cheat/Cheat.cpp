@@ -15,7 +15,7 @@ BOOL WINAPI Cheat::Core::detach()
 	return EXIT_SUCCESS;
 }
 
-DWORD WINAPI Cheat::Core::attach(const LPVOID thread)
+DWORD WINAPI Cheat::Core::attach(LPVOID const thread)
 {
 	Interface::Interfaces{};
 	Memory::Memory{};

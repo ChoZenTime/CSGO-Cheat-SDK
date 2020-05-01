@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cstdint>
-
 // https://github.com/ValveSoftware/source-sdk-2013/blob/master/mp/src/public/dt_recv.h
+
+#include <cstdint>
 
 namespace Cheat::SDK::Interface
 {

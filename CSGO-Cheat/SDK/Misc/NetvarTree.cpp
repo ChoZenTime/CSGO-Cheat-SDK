@@ -1,7 +1,7 @@
+// https://gist.github.com/AltimorTASDK/55b8b28e552eba0f6162
+
 #include "NetvarTree.hpp"
 #include "../../Cheat/Interfaces.hpp"
-
-// https://gist.github.com/AltimorTASDK/55b8b28e552eba0f6162
 
 namespace Cheat::SDK::Misc
 {

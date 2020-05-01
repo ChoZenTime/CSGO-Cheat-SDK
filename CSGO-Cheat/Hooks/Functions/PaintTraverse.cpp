@@ -18,7 +18,8 @@ namespace Cheat::Core::Hooks
 
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-			Features::window();
+			Features::renderWindow();
+			// Feature watermark
 		}
 	}
 }

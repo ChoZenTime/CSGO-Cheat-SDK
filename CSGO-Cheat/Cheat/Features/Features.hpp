@@ -4,7 +4,7 @@
 
 namespace Cheat::Core::Features
 {
-	inline void window()
+	inline void renderWindow()
 	{
 		Interface::getInterfaces.surface->clippingEnabled() = true;
 

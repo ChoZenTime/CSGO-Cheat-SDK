@@ -30,7 +30,7 @@ namespace Cheat::SDK::Interface
 		char friendsName[128];
 
 		bool fakePlayer;
-		bool isHltv;
+		bool isHlTv;
 
 		std::uint32_t customFiles[4];
 		std::uint8_t filesDownloaded;

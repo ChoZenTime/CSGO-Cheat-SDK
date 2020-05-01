@@ -11,7 +11,7 @@ namespace Cheat::Core::Hooks
 
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-
+			// Main features
 		}
 
 		return false;

@@ -5,14 +5,6 @@
 #include "ClientClass.hpp"
 #include "../Misc/Macros.hpp"
 
-// TODO: Remove this
-
-#define VFUNC(functionName, index, type, ...) \
-	auto functionName \
-	{ \
-		return Cheat::SDK::Misc::vfuncFromIndex<type>(this, index)(this, __VA_ARGS__); \
-	};
-
 namespace Cheat::SDK::Interface
 {
 	struct BaseClient
