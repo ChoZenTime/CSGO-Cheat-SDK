@@ -2,9 +2,8 @@
 
 #include <Windows.h>
 
-namespace Cheat
+namespace Cheat::Core
 {
-	void main(HMODULE module);
-	void thread();
-	void detach(HMODULE module);
+	extern DWORD WINAPI attach(LPVOID thread);
+	extern BOOL  WINAPI detach();
 }

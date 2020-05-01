@@ -18,7 +18,7 @@ std::uint32_t Injector::findProcess(const std::string_view processName)
 			if (!strcmp(processEntry.szExeFile, processName.data()))
 			{
 				CloseHandle(processSnapshot);
-
+				
 				return processEntry.th32ParentProcessID;
 			}
 		} while (Process32Next(processSnapshot, &processEntry));

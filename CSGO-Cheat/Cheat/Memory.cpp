@@ -1,6 +1,6 @@
 #include "Memory.hpp"
 
-bool Memory::valid(const std::uintptr_t pointer)
+bool Cheat::Core::Memory::valid(const std::uintptr_t pointer)
 {
 	MEMORY_BASIC_INFORMATION memoryInfo{};
 
@@ -13,9 +13,9 @@ bool Memory::valid(const std::uintptr_t pointer)
 	return true;
 }
 
-bool Memory::edit(void* memory, void* source, const DWORD length)
+bool Cheat::Core::Memory::edit(void* memory, void* source, const DWORD length)
 {
-	DWORD oldProtection{};
+	DWORD oldProtection {};
 
 	if (VirtualProtect(memory, length, PAGE_EXECUTE_READWRITE, &oldProtection))
 	{
@@ -32,9 +32,9 @@ bool Memory::edit(void* memory, void* source, const DWORD length)
 	return false;
 }
 
-void Memory::patch(BYTE* destination, BYTE* source, const uint16_t length)
+void Cheat::Core::Memory::patch(BYTE* destination, BYTE* source, const uint16_t length)
 {
-	DWORD oldProtection{};
+	DWORD oldProtection {};
 	VirtualProtect(destination, length, PAGE_EXECUTE_READWRITE, &oldProtection);
 
 	memcpy(destination, source, length);

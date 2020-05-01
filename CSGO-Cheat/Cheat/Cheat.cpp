@@ -1,27 +1,39 @@
 #include "Cheat.hpp"
-#include "Debug.hpp"
+#include "Configuration.hpp"
+#include "Memory.hpp"
+#include "../Hooks/Hooks.hpp"
+#include "../Menu/Menu.hpp"
 
-void Cheat::main(const HMODULE module)
+#include <thread>
+
+BOOL WINAPI Cheat::Core::detach()
 {
-	Debug::main();
+	Hooks::destroyHooks();
 
-	thread();
-
-	detach(module);
-}
-
-/*void Cheat::attach()
-{
-	MessageBoxA(nullptr, "[-] Injected", "Cheat", 0);
-}*/
-
-void Cheat::detach(const HMODULE module)
-{
 	MessageBoxA(nullptr, "[-] Exited thread", "Cheat", 0);
-	FreeLibraryAndExitThread(module, EXIT_SUCCESS);
+
+	return EXIT_SUCCESS;
 }
 
-void Cheat::thread()
+DWORD WINAPI Cheat::Core::attach(const LPVOID thread)
 {
+	Interface::Interfaces{};
+	Memory::Memory{};
+
+	SDK::Misc::getNetvarTree = std::make_unique<SDK::Misc::NetvarTree>();
+	SDK::Misc::setupRenderFunctions();
+	SDK::Misc::setupInputFunctions();
+
+	Hooks::createHooks();
+
+	Menu::render();
+
+	fgui::handler::call_notification("[-] Successfully injected", fgui::animation_type::LINEAR);
+
+	// while (!Menu::checkBox["#unload_cheat_checkbox"]->get_bool())
+	while (!GetAsyncKeyState(Configuration::exitThreadKey)) {}
+
+	detach();
 	
+	FreeLibraryAndExitThread(static_cast<HMODULE>(thread), EXIT_SUCCESS);
 }

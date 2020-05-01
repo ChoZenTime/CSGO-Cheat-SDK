@@ -1,7 +1,9 @@
 #pragma once
 
+#include <string>
+
 namespace Configuration
 {
-	constexpr auto dllName     = L"CSGO-Cheat.dll";
-	constexpr auto processName = "csgo.exe";
+	/*constexpr*/ inline std::string dllName {};
+	/*constexpr*/ inline std::string processName {};
 }

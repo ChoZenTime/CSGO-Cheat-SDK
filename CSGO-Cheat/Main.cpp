@@ -1,23 +1,22 @@
 #include "Cheat/Cheat.hpp"
 
-#include <Windows.h>
-
-void mainThread(const HMODULE module)
+BOOL WINAPI DllMain(HINSTANCE const* instance, const DWORD reason, LPVOID const* reserved)
 {
-    Cheat::main(module);
-}
+	switch (reason) 
+	{
+		case DLL_PROCESS_ATTACH:
+		{
+			auto *const thread = CreateThread(nullptr, 0, Cheat::Core::attach, *instance, 0, nullptr);
+			if (thread != nullptr) CloseHandle(thread);
+		} break;
 
-BOOL APIENTRY DllMain(const HMODULE module, const DWORD callReason, const LPVOID reserved)
-{
-    if (callReason == DLL_PROCESS_ATTACH)
-    {
-        DisableThreadLibraryCalls(module);
+		case DLL_PROCESS_DETACH:
+		{
+			if (!reserved) Cheat::Core::detach();
+		} break;
 
-        if (auto *const handle = CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(mainThread),nullptr, 0, nullptr))
-        {
-            CloseHandle(handle);
-        }
-    }
+		default: break;
+	}
 
-    return true;
+	return EXIT_SUCCESS;
 }

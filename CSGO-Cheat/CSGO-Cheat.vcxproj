@@ -72,12 +72,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\Builds\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\Builds\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -85,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;CSGOCHEAT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -118,7 +120,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -159,17 +161,119 @@
   <ItemGroup>
     <ClInclude Include="Cheat\Cheat.hpp" />
     <ClInclude Include="Cheat\Configuration.hpp" />
-    <ClInclude Include="Cheat\Debug.hpp" />
+    <ClInclude Include="Cheat\Features\Features.hpp" />
+    <ClInclude Include="Cheat\Interfaces.hpp" />
     <ClInclude Include="Cheat\Memory.hpp" />
-    <ClInclude Include="Math\Vectors.h" />
-    <ClInclude Include="SDK\Entity.hpp" />
+    <ClInclude Include="Dependencies\Fmt\chrono.hh" />
+    <ClInclude Include="Dependencies\Fmt\color.hh" />
+    <ClInclude Include="Dependencies\Fmt\compile.hh" />
+    <ClInclude Include="Dependencies\Fmt\core.hh" />
+    <ClInclude Include="Dependencies\Fmt\format-inl.hh" />
+    <ClInclude Include="Dependencies\Fmt\format.hh" />
+    <ClInclude Include="Dependencies\Fmt\locale.hh" />
+    <ClInclude Include="Dependencies\Fmt\ostream.hh" />
+    <ClInclude Include="Dependencies\Fmt\posix.hh" />
+    <ClInclude Include="Dependencies\Fmt\printf.hh" />
+    <ClInclude Include="Dependencies\Fmt\ranges.hh" />
+    <ClInclude Include="Dependencies\Fmt\safe-duration-cast.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\button.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\checkbox.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\colorlist.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\colorpicker.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\combobox.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\container.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\element.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\keybinder.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\label.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\listbox.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\multibox.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\slider.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\spinner.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\tabs.hh" />
+    <ClInclude Include="Dependencies\Gui\controls\textbox.hh" />
+    <ClInclude Include="Dependencies\Gui\dependencies\aliases.hh" />
+    <ClInclude Include="Dependencies\Gui\dependencies\color.hh" />
+    <ClInclude Include="Dependencies\Gui\dependencies\definitions.hh" />
+    <ClInclude Include="Dependencies\Gui\dependencies\input.hh" />
+    <ClInclude Include="Dependencies\Gui\dependencies\json.hh" />
+    <ClInclude Include="Dependencies\Gui\FGUI.hh" />
+    <ClInclude Include="Dependencies\Gui\handler\handler.hh" />
+    <ClInclude Include="Dependencies\Gui\notifications\notifications.hh" />
+    <ClInclude Include="Hooks\Hooks.hpp" />
+    <ClInclude Include="Menu\Menu.hpp" />
+    <ClInclude Include="SDK\Enums\AnalogCode.hpp" />
+    <ClInclude Include="SDK\Enums\Button.hpp" />
+    <ClInclude Include="SDK\Enums\ClientFrameStage.hpp" />
+    <ClInclude Include="SDK\Enums\Flags.hpp" />
+    <ClInclude Include="SDK\Enums\Fonts.hpp" />
+    <ClInclude Include="SDK\Enums\Move.hpp" />
+    <ClInclude Include="SDK\Enums\SendPropType.hpp" />
+    <ClInclude Include="SDK\Interface\ClientBase.hpp" />
+    <ClInclude Include="SDK\Interface\ClientClass.hpp" />
+    <ClInclude Include="SDK\Interface\ClientEntity.hpp" />
+    <ClInclude Include="SDK\Interface\ClientMode.hpp" />
+    <ClInclude Include="SDK\Interface\Convar.hpp" />
+    <ClInclude Include="SDK\Interface\Cvar.hpp" />
+    <ClInclude Include="SDK\Interface\DebugOverlay.hpp" />
+    <ClInclude Include="SDK\Interface\Engine.hpp" />
+    <ClInclude Include="SDK\Interface\Entity.hpp" />
+    <ClInclude Include="SDK\Interface\GlobalVariables.hpp" />
+    <ClInclude Include="SDK\Interface\Input.hpp" />
+    <ClInclude Include="SDK\Interface\InputSystem.hpp" />
+    <ClInclude Include="SDK\Interface\Material.hpp" />
+    <ClInclude Include="SDK\Interface\MaterialSystem.hpp" />
+    <ClInclude Include="SDK\Interface\Panel.hpp" />
+    <ClInclude Include="SDK\Interface\PlayerInfo.hpp" />
+    <ClInclude Include="SDK\Interface\RenderView.hpp" />
+    <ClInclude Include="SDK\Interface\Sound.hpp" />
+    <ClInclude Include="SDK\Interface\SoundData.hpp" />
+    <ClInclude Include="SDK\Interface\Surface.hpp" />
+    <ClInclude Include="SDK\Interface\UserCmd.hpp" />
+    <ClInclude Include="SDK\Interface\UtlVector.hpp" />
+    <ClInclude Include="SDK\Interface\ViewSetup.hpp" />
+    <ClInclude Include="SDK\Misc\CaptureInterface.hpp" />
+    <ClInclude Include="SDK\Misc\InputHelper.hpp" />
+    <ClInclude Include="SDK\Misc\Macros.hpp" />
+    <ClInclude Include="SDK\Misc\NetvarTree.hpp" />
+    <ClInclude Include="SDK\Misc\Render.hpp" />
+    <ClInclude Include="SDK\Misc\Vector.hpp" />
+    <ClInclude Include="SDK\Misc\VfuncFromIndex.hpp" />
+    <ClInclude Include="SDK\Misc\VmtHook.hpp" />
+    <ClInclude Include="SDK\SDK.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cheat\Cheat.cpp" />
-    <ClCompile Include="Cheat\Debug.cpp" />
+    <ClCompile Include="Cheat\Features\Misc\Misc.cpp" />
     <ClCompile Include="Cheat\Memory.cpp" />
+    <ClCompile Include="Dependencies\Gui\controls\button.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\checkbox.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\colorlist.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\colorpicker.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\combobox.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\container.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\element.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\keybinder.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\label.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\listbox.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\multibox.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\slider.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\spinner.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\tabs.cc" />
+    <ClCompile Include="Dependencies\Gui\controls\textbox.cc" />
+    <ClCompile Include="Dependencies\Gui\handler\handler.cc" />
+    <ClCompile Include="Dependencies\Gui\notifications\notifications.cc" />
+    <ClCompile Include="Hooks\Functions\CreateMove.cpp" />
+    <ClCompile Include="Hooks\Functions\EmitSound.cpp" />
+    <ClCompile Include="Hooks\Functions\FrameStageNotify.cpp" />
+    <ClCompile Include="Hooks\Functions\OverRideView.cpp" />
+    <ClCompile Include="Hooks\Functions\PaintTraverse.cpp" />
+    <ClCompile Include="Hooks\Functions\SceneEnd.cpp" />
+    <ClCompile Include="Hooks\Hooks.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SDK\Entity.cpp" />
+    <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="SDK\Misc\InputHelper.cpp" />
+    <ClCompile Include="SDK\Misc\NetvarTree.cpp" />
+    <ClCompile Include="SDK\Misc\Render.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
