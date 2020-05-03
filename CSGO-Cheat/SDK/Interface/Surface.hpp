@@ -7,7 +7,7 @@ namespace Cheat::SDK::Interface
 {
 	struct Surface
 	{
-		OFFSET(clippingEnabled(), bool, 0x280);
+		OFFSET(clippingEnabled(), bool, 0x280)
 		
 		VFUNC(drawSetColor(const std::int32_t r, const std::int32_t g, const std::int32_t b, const std::int32_t a), 15, void(__thiscall*)(void*, std::int32_t, std::int32_t, std::int32_t, std::int32_t), r, g, b, a)
 		VFUNC(drawFilledRectangle(const std::int32_t x, const std::int32_t y, const std::int32_t w, const std::int32_t h), 16, void(__thiscall*)(void*, std::int32_t, std::int32_t, std::int32_t, std::int32_t), x, y, w, h)

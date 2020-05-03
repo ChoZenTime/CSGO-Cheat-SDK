@@ -17,6 +17,7 @@ namespace Cheat::Core::Hooks
 		if (panelName != copy) return;
 
 		Features::renderWindow();
+		Features::watermark();
 		
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{

@@ -258,6 +258,12 @@
     <ClInclude Include="Menu\Menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cheat\Features\Visuals\Visuals.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cheat\Features\Misc\Misc.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

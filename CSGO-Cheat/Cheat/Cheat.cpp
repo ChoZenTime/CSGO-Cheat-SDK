@@ -4,14 +4,14 @@
 #include "../Hooks/Hooks.hpp"
 #include "../Menu/Menu.hpp"
 
-void Cheat::Core::detach(LPVOID const* thread)
+void Cheat::Core::detach(const HMODULE module)
 {
 	Hooks::destroy();
 	
-	FreeLibraryAndExitThread(static_cast<HMODULE>(*thread), EXIT_SUCCESS);
+	FreeLibraryAndExitThread(module, EXIT_SUCCESS);
 }
 
-void Cheat::Core::attach(LPVOID const* thread)
+void Cheat::Core::attach(const HMODULE module)
 {
 	Interface::Interfaces{};
 	Memory::Memory {};
@@ -24,11 +24,11 @@ void Cheat::Core::attach(LPVOID const* thread)
 
 	Menu::render();
 
-	fgui::handler::call_notification("[ - ] Success", fgui::animation_type::LINEAR);
+	fgui::handler::call_notification("SUCCESS", fgui::animation_type::LINEAR);
 
 	while (!GetAsyncKeyState(Configuration::exitThreadKey)) {}
 
-	fgui::handler::call_notification("[ - ] Detached", fgui::animation_type::LINEAR);
+	fgui::handler::call_notification("DETACHED", fgui::animation_type::LINEAR);
 
-	detach(thread);
+	detach(module);
 }

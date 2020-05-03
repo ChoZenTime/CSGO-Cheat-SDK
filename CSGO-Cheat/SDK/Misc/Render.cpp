@@ -141,7 +141,7 @@ namespace Cheat::SDK::Misc
 		fonts.push_back(CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark));
 		fonts.push_back(CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals));
 
-		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals)], Configuration::visualsFont, Configuration::visualsSize, fgui::external::font_flags::SHADOW, false);
-		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark)], Configuration::watermarkFont, Configuration::watermarkSize, fgui::external::font_flags::SHADOW, false);
+		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals)], Configuration::visualsFont, Configuration::visualsSize, fgui::external::font_flags::ANTIALIAS, false);
+		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark)], Configuration::watermarkFont, Configuration::watermarkSize, fgui::external::font_flags::ANTIALIAS, false);
 	}
 }

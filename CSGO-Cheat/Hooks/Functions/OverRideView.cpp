@@ -1,4 +1,5 @@
 #include "../Hooks.hpp"
+#include "../../Cheat/Features/Features.hpp"
 
 namespace Cheat::Core::Hooks
 {
@@ -6,7 +7,7 @@ namespace Cheat::Core::Hooks
 	{
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-			// View model feature	
+			//Features::viewmodel(viewSetup);
 		}
 
 		GET_ORIGINAL_FUNCTION(clientMode, 18, void(__thiscall*)(std::uintptr_t, SDK::Interface::ViewSetup*), ecx, viewSetup);

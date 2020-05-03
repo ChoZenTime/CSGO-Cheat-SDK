@@ -162,6 +162,8 @@
     <ClInclude Include="Cheat\Cheat.hpp" />
     <ClInclude Include="Cheat\Configuration.hpp" />
     <ClInclude Include="Cheat\Features\Features.hpp" />
+    <ClInclude Include="Cheat\Features\Misc\Misc.hpp" />
+    <ClInclude Include="Cheat\Features\Visuals\Visuals.hpp" />
     <ClInclude Include="Cheat\Interfaces.hpp" />
     <ClInclude Include="Cheat\Memory.hpp" />
     <ClInclude Include="Dependencies\Fmt\chrono.hh" />

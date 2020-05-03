@@ -4,6 +4,6 @@
 
 namespace Cheat::Core
 {
-	extern void attach(const LPVOID *thread);
-	extern void detach(const LPVOID* thread);
+	extern void attach(HMODULE module);
+	extern void detach(HMODULE module);
 }
