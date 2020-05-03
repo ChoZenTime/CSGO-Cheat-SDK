@@ -4,6 +4,6 @@
 
 namespace Configuration
 {
-	/*constexpr*/ inline std::string dllName {};
-	/*constexpr*/ inline std::string processName {};
+	inline std::string dllName     {};
+	inline std::string processName {};
 }

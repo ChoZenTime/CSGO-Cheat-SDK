@@ -1,9 +1,9 @@
 #pragma once
 
+// https://gist.github.com/AltimorTASDK/75fe97ff3174a7de3739
+
 #include <memory>
 #include <unordered_map>
-
-// https://gist.github.com/AltimorTASDK/75fe97ff3174a7de3739
 
 namespace Cheat::SDK::Interface
 {
@@ -20,14 +20,14 @@ namespace Cheat::SDK::Misc
 
 		struct Node
 		{
-			explicit Node(const std::int32_t offset) : offset(offset) { }
+			explicit Node(const std::int32_t offset) : offset(offset) {}
 
-			MapType nodes;
+			MapType nodes {};
 
-			std::int32_t offset;
+			std::int32_t offset {};
 		};
 
-		MapType nodes{};
+		MapType nodes {};
 
 	public:
 		NetvarTree();
@@ -36,21 +36,22 @@ namespace Cheat::SDK::Misc
 		{
 			const auto& node = nodes[name];
 
-			return get_offset_recursive(node->nodes, node->offset, args...);
+			return getOffsetRecursive(node->nodes, node->offset, args...);
 		}
 
 	private:
 		void populateNodes(Interface::RecvTable* recvTable, MapType* map) const;
 
-		static std::int32_t get_offset_recursive(MapType& map, const std::int32_t acc, const char* name)
+		static std::int32_t getOffsetRecursive(MapType& map, const std::int32_t acc, const char* name)
 		{
 			return acc + map[name]->offset;
 		}
 
-		template <typename... T> std::int32_t getOffsetRecursive(MapType& map, const std::int32_t acc, const char* name, T ... args) {
+		template <typename... T> std::int32_t getOffsetRecursive(MapType& map, const std::int32_t acc, const char* name, T ... args)
+		{
 			const auto& node = map[name];
 
-			return get_offset_recursive(node->nodes, acc + node->offset, args...);
+			return getOffsetRecursive(node->nodes, acc + node->offset, args...);
 		}
 	};
 

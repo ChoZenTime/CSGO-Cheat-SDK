@@ -9,6 +9,6 @@ namespace Cheat::SDK::Interface
 {
 	struct Cvar
 	{
-		VFUNC(findCvar(const char* cvar), 15, Convar* (__thiscall*)(void*, const char*), cvar);
+		VFUNC(findCvar(const char* cvar), 15, Convar* (__thiscall*)(void*, const char*), cvar)
 	};
 }

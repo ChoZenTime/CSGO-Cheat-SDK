@@ -11,12 +11,12 @@ namespace Cheat::SDK::Interface
 			return memory[index];
 		}
 
-		T* memory;
+		T* memory {};
 
-		std::int32_t allocationCount;
-		std::int32_t growSize;
-		std::int32_t size;
+		std::int32_t allocationCount {};
+		std::int32_t growSize        {};
+		std::int32_t size            {};
 
-		T* elements;
+		T* elements {};
 	};
 }

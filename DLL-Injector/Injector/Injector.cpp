@@ -46,7 +46,7 @@ BOOL Injector::main()
 		const auto filePath = std::filesystem::canonical(Configuration::dllName).wstring();
 		if (!std::filesystem::exists(filePath)) throw std::runtime_error("[ - ] Failed to find target file");
 
-		const auto processId = findProcess({Configuration::processName});
+		const auto processId = findProcess(std::string_view{Configuration::processName});
 		if (!processId) throw std::runtime_error("[ - ] Target process is not open");
 
 		process = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_CREATE_THREAD, FALSE, processId);

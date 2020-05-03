@@ -4,6 +4,6 @@
 
 namespace Cheat::Core
 {
-	extern DWORD WINAPI attach(LPVOID thread);
-	extern BOOL  WINAPI detach();
+	extern void attach(const LPVOID *thread);
+	extern void detach(const LPVOID* thread);
 }

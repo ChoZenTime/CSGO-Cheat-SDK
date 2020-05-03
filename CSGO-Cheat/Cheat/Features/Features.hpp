@@ -3,7 +3,7 @@
 #include "../../SDK/SDK.hpp"
 
 namespace Cheat::Core::Features
-{
+{;
 	inline void renderWindow()
 	{
 		Interface::getInterfaces.surface->clippingEnabled() = true;

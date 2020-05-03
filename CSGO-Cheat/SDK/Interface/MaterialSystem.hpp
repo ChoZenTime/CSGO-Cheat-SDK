@@ -7,6 +7,6 @@ namespace Cheat::SDK::Interface
 {
 	struct MaterialSystem
 	{
-		VFUNC(findMaterial(const char* materialName), 84, Material* (__thiscall*)(void*, const char*), materialName);
+		VFUNC(findMaterial(const char* materialName), 84, Material* (__thiscall*)(void*, const char*), materialName)
 	};
 }

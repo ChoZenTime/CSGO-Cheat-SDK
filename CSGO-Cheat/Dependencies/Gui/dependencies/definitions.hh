@@ -179,6 +179,7 @@ namespace fgui {
 			MOUSE_MIDDLE = 0x6D,
 			MOUSE_4 = 0x6E,
 			MOUSE_5 = 0x6F,
+			PAGE_UP = 0x21
 		};
 
 		// this will only work if you're using ISurface (Source Engine)

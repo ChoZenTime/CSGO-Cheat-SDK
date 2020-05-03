@@ -18,7 +18,7 @@ namespace Cheat::SDK::Misc
 
 	fgui::dimension getTextSize(const fgui::font& font, const std::string_view text)
 	{
-		fgui::dimension dimension = { 0, 0 };
+		fgui::dimension dimension = {0, 0};
 
 		Core::Interface::getInterfaces.surface->getTextSize(font, std::wstring(text.begin(), text.end()).data(), dimension.width, dimension.height);
 
@@ -84,14 +84,18 @@ namespace Cheat::SDK::Misc
 			rectangle(x, y, w, h, firstColor);
 
 			for (auto i = 0; i < w; i++)
+			{
 				rectangle(x + i, y, 1, h, fgui::color(secondColor.m_red, secondColor.m_red, secondColor.m_blue, i / w * 255));
+			}
 		}
 		else 
 		{
 			rectangle(x, y, w, h, firstColor);
 
 			for (auto i = 0; i < w; i++)
+			{
 				rectangle(x, y + i, w, 1, fgui::color(secondColor.m_red, secondColor.m_red, secondColor.m_blue, i / w * 255));
+			}
 		}
 	}
 
@@ -113,7 +117,7 @@ namespace Cheat::SDK::Misc
 
 	void clipRectangle(const std::int32_t x, const std::int32_t y, const std::int32_t width, const std::int32_t height)
 	{
-		const fgui::rect viewport = { x, y, (x + width), (y + height) };
+		const fgui::rect viewport = {x, y, (x + width), (y + height)};
 
 		Core::Interface::getInterfaces.surface->setClipRectangle(viewport.left, viewport.top, viewport.right, viewport.bottom);
 	}
@@ -139,6 +143,5 @@ namespace Cheat::SDK::Misc
 
 		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Visuals)], Configuration::visualsFont, Configuration::visualsSize, fgui::external::font_flags::SHADOW, false);
 		fgui::render.create_font(fonts[CONVERT_ENUM_TYPE(std::int32_t, Enum::Font::Watermark)], Configuration::watermarkFont, Configuration::watermarkSize, fgui::external::font_flags::SHADOW, false);
-		
 	}
 }

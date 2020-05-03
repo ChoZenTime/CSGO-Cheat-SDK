@@ -2,7 +2,7 @@
 
 bool Cheat::Core::Memory::valid(const std::uintptr_t pointer)
 {
-	MEMORY_BASIC_INFORMATION memoryInfo{};
+	MEMORY_BASIC_INFORMATION memoryInfo {};
 
 	const auto returnSize = VirtualQuery(reinterpret_cast<LPCVOID>(pointer), &memoryInfo, sizeof(memoryInfo));
 

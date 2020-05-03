@@ -6,8 +6,8 @@ namespace Cheat::SDK::Interface
 {
 	struct ViewSetup
 	{
-		PAD(pad1, 176);
+		PAD(pad1, 176) {};
 
-		float viewModelFov;
+		float viewModelFov {};
 	};
 }

@@ -8,10 +8,10 @@
 #define REGISTERS \
 	std::uintptr_t ecx, std::uintptr_t edx
 
-#define PAD( variable_name, size ) \
-	std::byte variable_name[ size ]
+#define PAD(variable_name, size) \
+	std::byte variable_name[size]
 
-#define CAPTURE_INTERFACE( variableName, interfaceStruct, interfaceModule, interfaceName ) \
+#define CAPTURE_INTERFACE(variableName, interfaceStruct, interfaceModule, interfaceName) \
 	interfaceStruct* variableName = Cheat::SDK::Misc::captureInterface<interfaceStruct*>(interfaceModule, interfaceName)
 
 #define MEMORY_POINTER(variableName, interfaceStruct, interfacePointer, base, offset) \

@@ -6,6 +6,6 @@ namespace Cheat::Core::Hooks
 	{
 		GET_ORIGINAL_FUNCTION(sound, 5, void(__thiscall*)(std::uintptr_t, SDK::Interface::SoundData), ecx, soundData);
 	}
-
+	
 	// Add sound features
 }

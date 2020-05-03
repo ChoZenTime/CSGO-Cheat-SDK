@@ -4,5 +4,5 @@
 
 namespace Cheat::SDK::Interface
 {
-	struct ClientMode;
+	struct ClientMode {};
 }

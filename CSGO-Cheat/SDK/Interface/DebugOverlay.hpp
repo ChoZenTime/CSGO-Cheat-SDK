@@ -9,6 +9,6 @@ namespace Cheat::SDK::Interface
 {
 	struct DebugOverlay
 	{
-		VFUNC(screenPosition(const Misc::Vector& point, Misc::Vector& screen), 13, std::int32_t(__thiscall*)(void*, const Misc::Vector&, Misc::Vector&), point, screen);
+		VFUNC(screenPosition(const Misc::Vector& point, Misc::Vector& screen), 13, std::int32_t(__thiscall*)(void*, const Misc::Vector&, Misc::Vector&), point, screen)
 	};
 }

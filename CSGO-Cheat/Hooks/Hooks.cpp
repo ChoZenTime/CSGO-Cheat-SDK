@@ -10,7 +10,7 @@ namespace Cheat::Core::Hooks
 	std::unique_ptr<SDK::Misc::VmtHook> sound;
 	std::unique_ptr<SDK::Misc::VmtHook> panel;
 
-	void createHooks()
+	void create()
 	{
 		SETUP_HOOK(client, Interface::getInterfaces.baseClient);
 		if (client) HOOK_FUNCTION(client, 37, frameStageNotify);
@@ -32,7 +32,7 @@ namespace Cheat::Core::Hooks
 		if (panel) HOOK_FUNCTION(panel, 41, paintTraverse);
 	}
 
-	void destroyHooks()
+	void destroy()
 	{
 		UNHOOK_FUNCTION(client, 37);
 		UNHOOK_FUNCTION(clientMode, 24);

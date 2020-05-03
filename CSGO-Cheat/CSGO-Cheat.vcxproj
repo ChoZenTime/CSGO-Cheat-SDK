@@ -244,6 +244,7 @@
   <ItemGroup>
     <ClCompile Include="Cheat\Cheat.cpp" />
     <ClCompile Include="Cheat\Features\Misc\Misc.cpp" />
+    <ClCompile Include="Cheat\Features\Visuals\Visuals.cpp" />
     <ClCompile Include="Cheat\Memory.cpp" />
     <ClCompile Include="Dependencies\Gui\controls\button.cc" />
     <ClCompile Include="Dependencies\Gui\controls\checkbox.cc" />

@@ -24,80 +24,80 @@ namespace Cheat::SDK::Interface
 
 			char* stringType;
 
-			void* dataType;
+			void* dataType; 
 
 			float vectorType[3];
 
 			__int64 int64Type;
 		};
 
-		std::int32_t type;
+		std::int32_t type {};
 	};
 
 	struct RecvProxyData
 	{
-		const RecvProp* prop;
+		const RecvProp* prop {};
 
-		Variant value;
+		Variant value {};
 
-		std::int32_t element;
-		std::int32_t objectId;
+		std::int32_t element  {};
+		std::int32_t objectId {};
 	};
 
 	struct RecvTable
 	{
-		RecvProp* prop;
+		RecvProp* prop {};
 
-		std::int32_t props;
+		std::int32_t props {};
 
-		void* decoder;
+		void* decoder {};
 
-		char* netTableName;
+		char* netTableName {};
 
-		bool isInitialized;
-		bool isInMainList;
+		bool isInitialized {};
+		bool isInMainList  {};
 	};
 
 	struct RecvProp
 	{
-		char* variableName;
+		char* variableName {};
 
-		std::int32_t recvType;
-		std::int32_t flags;
-		std::int32_t stringBufferSize;
+		std::int32_t recvType           {};
+		std::int32_t flags              {};
+		std::int32_t stringBufferSize   {};
 
-		bool isInsideArray;
+		bool isInsideArray {};
 
-		const void* extraData;
+		const void* extraData {};
 
-		RecvProp* arrayProp;
+		RecvProp* arrayProp {};
 
-		void* arrayLengthProxy;
+		void* arrayLengthProxy {};
 
-		RecvVarProxy varProxy;
+		RecvVarProxy varProxy {};
 
-		void* dataTableProxy;
+		void* dataTableProxy {};
 
-		RecvTable* dataTable;
+		RecvTable* dataTable {};
 
-		std::int32_t offset;
-		std::int32_t elementStride;
-		std::int32_t elements;
+		std::int32_t offset {};
+		std::int32_t elementStride {};
+		std::int32_t elements {};
 
-		const char* parentArrayPropName;
+		const char* parentArrayPropName {};
 	};
 
 	class ClientClass
 	{
 	public:
-		CreateClientClass client;
-		CreateEvent event;
+		CreateClientClass client {};
+		CreateEvent event {};
 
-		char* networkName;
+		char* networkName {};
 
-		RecvTable* table;
-		ClientClass* next;
+		RecvTable* table  {};
+		ClientClass* next {};
 
-		std::int32_t classId;
+		std::int32_t classId {};
 	};
 }

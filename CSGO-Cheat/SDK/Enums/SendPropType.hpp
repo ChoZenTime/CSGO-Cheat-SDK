@@ -2,7 +2,6 @@
 
 // https://github.com/ValveSoftware/source-sdk-2013/blob/master/sp/src/public/dt_common.h
 
-
 namespace Cheat::SDK::Enum
 {
 	enum class SendPropType

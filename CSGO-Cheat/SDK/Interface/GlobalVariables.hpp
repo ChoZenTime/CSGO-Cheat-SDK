@@ -12,7 +12,7 @@ namespace Cheat::SDK::Interface
 
 		std::int32_t frameCount {};
 
-		float absoluteFrameTime {};
+		float absoluteFrameTime      {};
 		float absoluteFrameStartTime {};
 		float curTime   {};
 		float frameTime {};
@@ -26,9 +26,9 @@ namespace Cheat::SDK::Interface
 		std::int32_t simTicksThisFrame {};
 		std::int32_t networkProtocol   {};
 
-		void* saveData;
+		void* saveData {};
 
-		bool client {};
+		bool client       {};
 		bool removeClient {};
 
 		std::int32_t timeStampNetworkingBase  {};

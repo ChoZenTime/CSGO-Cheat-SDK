@@ -356,5 +356,8 @@
     <ClCompile Include="Cheat\Features\Misc\Misc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cheat\Features\Visuals\Visuals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

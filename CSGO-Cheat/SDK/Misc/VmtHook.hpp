@@ -38,7 +38,7 @@ namespace Cheat::SDK::Misc
 			return true;
 		}
 
-		bool unhookFunction(const std::size_t index) const
+		[[nodiscard]] bool unhookFunction(const std::size_t index) const
 		{
 			if (index > size) return false;
 
@@ -53,9 +53,9 @@ namespace Cheat::SDK::Misc
 		}
 
 	private:
-		std::size_t size = 0;
-		std::uintptr_t** base = nullptr;
-		std::uintptr_t* total = nullptr;
+		std::size_t      size  = 0;
+		std::uintptr_t** base  = nullptr;
+		std::uintptr_t*  total = nullptr;
 		std::unique_ptr< std::uintptr_t[] > current = nullptr;
 	};
 }

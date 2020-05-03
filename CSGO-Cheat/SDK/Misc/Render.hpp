@@ -1,13 +1,13 @@
 #pragma once
 
-#include <vector>
-
 #include "../../Cheat/Interfaces.hpp"
 #include "../../Dependencies/Gui/FGUI.hh"
 
+#include <vector>
+
 namespace Cheat::SDK::Misc
 {
-	inline std::vector< fgui::font > fonts;
+	inline std::vector<fgui::font> fonts;
 
 	extern void createFont(fgui::font&, std::string_view, std::int32_t, std::int32_t, bool);
 	extern void getScreenSize(std::int32_t&, std::int32_t&);

@@ -9,6 +9,7 @@ namespace Cheat::SDK::Interface
 {
 	struct BaseClient
 	{
+		// TODO: https://docs.microsoft.com/en-us/cpp/build/reference/hint-files?view=vs-2019
 	    VFUNC(getAllClasses(), 8, ClientClass* (__thiscall*)(void*))
 		VFUNC(dispatchUserMessage(const std::int32_t message, const std::int32_t firstArg, const std::int32_t secondArg, void* data), 38, bool(__thiscall*)(void*, std::int32_t, std::uint32_t, std::uint32_t, void*), message, firstArg, secondArg, data)
 	};

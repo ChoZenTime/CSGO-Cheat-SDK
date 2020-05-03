@@ -7,12 +7,12 @@
 
 namespace Cheat::SDK::Misc
 {
-	template < typename T > static T captureInterface(const char* moduleName, const char* interfaceName)
+	template <typename T> static T captureInterface(const char* moduleName, const char* interfaceName)
 	{
 		const auto moduleHandle = GetModuleHandleA(moduleName);
 
 		if (!moduleHandle) return {};
-
+		
 		const auto createInterface = reinterpret_cast<T(__cdecl*)(const char*, std::int32_t*)>(GetProcAddress(moduleHandle, "CreateInterface"));
 
 		if (!createInterface) return {};

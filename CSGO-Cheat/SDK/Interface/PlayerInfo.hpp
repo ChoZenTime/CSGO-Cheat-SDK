@@ -8,7 +8,7 @@ namespace Cheat::SDK::Interface
 {
 	struct PlayerInfo
 	{
-		std::int64_t reserved;
+		std::int64_t reserved {};
 
 		union
 		{
@@ -17,22 +17,22 @@ namespace Cheat::SDK::Interface
 			std::int32_t xuIdHigh;
 		};
 
-		char name[128];
+		char name[128] {};
 
-		std::int32_t userId;
+		std::int32_t userId {};
 
-		char guid[20];
+		char guid[20] {};
 
-		PAD(pad, 16);
+		PAD(pad, 16) {};
 
-		unsigned long friendsId;
+		unsigned long friendsId {};
 
-		char friendsName[128];
+		char friendsName[128] {};
 
-		bool fakePlayer;
-		bool isHlTv;
+		bool fakePlayer {};
+		bool isHlTv     {};
 
-		std::uint32_t customFiles[4];
-		std::uint8_t filesDownloaded;
+		std::uint32_t customFiles[4]  {};
+		std::uint8_t  filesDownloaded {};
 	};
 }
