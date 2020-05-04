@@ -24,11 +24,11 @@ void Cheat::Core::attach(const HMODULE module)
 
 	Menu::render();
 
-	fgui::handler::call_notification("SUCCESS", fgui::animation_type::LINEAR);
+	fgui::handler::call_notification("[ - ] FAIL PRIVATE - INJECTED", fgui::animation_type::LINEAR);
 
 	while (!GetAsyncKeyState(Configuration::exitThreadKey)) {}
 
-	fgui::handler::call_notification("DETACHED", fgui::animation_type::LINEAR);
+	fgui::handler::call_notification("[ - ] FAIL PRIVATE - UNINJECTED", fgui::animation_type::LINEAR);
 
 	detach(module);
 }

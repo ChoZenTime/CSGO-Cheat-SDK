@@ -2,9 +2,11 @@
 
 #include "../../../SDK/Interface/ViewSetup.hpp"
 
-namespace Cheat::Core::Features
+namespace Visuals
 {
-	extern void watermark();
-	extern void renderWindow();
-	void viewmodel(SDK::Interface::ViewSetup* viewSetup);
+	void watermark();
+	void renderWindow();
+	void viewmodel(Cheat::SDK::Interface::ViewSetup* viewSetup);
+	void grenadePreview();
+	void esp();
 }

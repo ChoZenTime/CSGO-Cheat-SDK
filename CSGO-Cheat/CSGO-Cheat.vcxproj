@@ -210,6 +210,7 @@
     <ClInclude Include="SDK\Enums\Fonts.hpp" />
     <ClInclude Include="SDK\Enums\Move.hpp" />
     <ClInclude Include="SDK\Enums\SendPropType.hpp" />
+    <ClInclude Include="SDK\Enums\WeaponType.hpp" />
     <ClInclude Include="SDK\Interface\ClientBase.hpp" />
     <ClInclude Include="SDK\Interface\ClientClass.hpp" />
     <ClInclude Include="SDK\Interface\ClientEntity.hpp" />
@@ -233,6 +234,7 @@
     <ClInclude Include="SDK\Interface\UserCmd.hpp" />
     <ClInclude Include="SDK\Interface\UtlVector.hpp" />
     <ClInclude Include="SDK\Interface\ViewSetup.hpp" />
+    <ClInclude Include="SDK\Interface\WeaponData.hpp" />
     <ClInclude Include="SDK\Misc\CaptureInterface.hpp" />
     <ClInclude Include="SDK\Misc\InputHelper.hpp" />
     <ClInclude Include="SDK\Misc\Macros.hpp" />

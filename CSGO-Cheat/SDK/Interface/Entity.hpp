@@ -8,22 +8,22 @@ namespace Cheat::SDK::Interface
 	struct Entity
 	{
 		NETVAR(health(), std::int32_t, "DT_BasePlayer", "m_iHealth")
-		NETVAR(getArmorValue(), std::uint32_t, "DT_CSPlayer", "m_ArmorValue")
-		NETVAR(getFlags(), std::int32_t, "DT_BasePlayer", "m_fFlags")
-		NETVAR(getTeam(), std::int32_t, "DT_BaseEntity", "m_iTeamNum")
-		NETVAR(getRoundKills(), std::int32_t, "DT_CSPlayer", "m_iNumRoundKills")
+		NETVAR(armorValue(), std::uint32_t, "DT_CSPlayer", "m_ArmorValue")
+		NETVAR(flags(), std::int32_t, "DT_BasePlayer", "m_fFlags")
+		NETVAR(team(), std::int32_t, "DT_BaseEntity", "m_iTeamNum")
+		NETVAR(roundKills(), std::int32_t, "DT_CSPlayer", "m_iNumRoundKills")
 
-		NETVAR(isScoped(), bool, "DT_CSPlayer", "m_bIsScoped")
-		NETVAR(isControllingBot(), bool, "DT_CSPlayer", "m_bIsControllingBot")
-		NETVAR(hasHelmet(),        bool, "DT_CSPlayer", "m_bHasHelmet")
-		NETVAR(hasDefuseKit(),     bool, "DT_CSPlayer", "m_bHasDefuser")
+		NETVAR(scoped(), bool, "DT_CSPlayer", "m_bIsScoped")
+		NETVAR(controllingBot(), bool, "DT_CSPlayer", "m_bIsControllingBot")
+		NETVAR(helmet(),        bool, "DT_CSPlayer", "m_bHasHelmet")
+		NETVAR(defuseKit(),     bool, "DT_CSPlayer", "m_bHasDefuser")
 
-		NETVAR(getFlashDuration(),                 float, "DT_CSPlayer", "m_bHasDefuser")
-		NETVAR(getFlashAlpha(),                    float, "DT_CSPlayer", "m_flFlashMaxAlpha")
-		NETVAR(getHealthShotBoostExpirationTime(), float, "DT_CSPlayer", "m_flHealthShotBoostExpirationTime")
+		NETVAR(flashDuration(),                 float, "DT_CSPlayer", "m_bHasDefuser")
+		NETVAR(flashAlpha(),                    float, "DT_CSPlayer", "m_flFlashMaxAlpha")
+		NETVAR(healthShotBoostExpirationTime(), float, "DT_CSPlayer", "m_flHealthShotBoostExpirationTime")
 
-		NETVAR(getVecOrigin(), Misc::Vector, "DT_BaseEntity", "m_vecOrigin")
+		NETVAR(vecOrigin(), Misc::Vector, "DT_BaseEntity", "m_vecOrigin")
 
-		OFFSET(isDormant(), bool, 0xED)
+		OFFSET(dormant(), bool, 0xED)
 	};
 }

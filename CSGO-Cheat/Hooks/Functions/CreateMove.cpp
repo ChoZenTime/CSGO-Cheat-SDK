@@ -1,4 +1,5 @@
 #include "../Hooks.hpp"
+#include "../../Cheat/Features/Features.hpp"
 
 namespace Cheat::Core::Hooks
 {
@@ -11,7 +12,8 @@ namespace Cheat::Core::Hooks
 
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-			// Main features
+			//Visuals::grenadePreview();
+			//Misc::bunnyHop(cmd);
 		}
 
 		return false;

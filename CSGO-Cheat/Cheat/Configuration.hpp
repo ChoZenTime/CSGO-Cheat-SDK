@@ -16,13 +16,13 @@ namespace Configuration
 	constexpr auto menuX = 200;
 	constexpr auto menuY = 200;
 
-	constexpr std::string_view watermarkFont = "Korean";
-	constexpr std::uint32_t    watermarkSize = 12;
+	constexpr std::string_view watermarkFont = "Japanese";
+	constexpr std::uint32_t    watermarkSize = 10;
 	const     fgui::color      watermarkColor = { 250, 250, 250 };
 
-	constexpr std::string_view visualsFont = "Korean";
-	constexpr std::uint32_t    visualsSize = 12;
+	constexpr std::string_view visualsFont = "Japanese";
+	constexpr std::uint32_t    visualsSize = 10;
 
 	const fgui::element_font menuFont = {"Japanese", 10, fgui::external::font_flags::ANTIALIAS, false};
-	const fgui::element_font iconFont = {"Icon_Font", 50, fgui::external::font_flags::ANTIALIAS, false};
+	const fgui::element_font iconFont = {"Japanese", 12, fgui::external::font_flags::ANTIALIAS, false};
 }

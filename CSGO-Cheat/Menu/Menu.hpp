@@ -9,7 +9,7 @@
 namespace Cheat::Core::Menu
 {
 	inline std::unordered_map<std::string, std::shared_ptr<fgui::button      >> button;
-	inline std::unordered_map<std::string, std::shared_ptr<fgui::checkbox    >> checkBox;
+	inline std::unordered_map<std::string, std::shared_ptr<fgui::checkbox    >> checkbox;
 	inline std::unordered_map<std::string, std::shared_ptr<fgui::colorlist   >> colorList;
 	inline std::unordered_map<std::string, std::shared_ptr<fgui::colorpicker >> colorPicker;
 	inline std::unordered_map<std::string, std::shared_ptr<fgui::combobox    >> comboBox;

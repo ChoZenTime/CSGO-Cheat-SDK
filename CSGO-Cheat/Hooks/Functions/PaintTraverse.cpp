@@ -16,12 +16,13 @@ namespace Cheat::Core::Hooks
 		
 		if (panelName != copy) return;
 
-		Features::renderWindow();
-		Features::watermark();
+		Visuals::renderWindow();
+		Visuals::watermark();
 		
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
 			// Game rendering
-		}
+			//Visuals::esp();
+		}		
 	}
 }
