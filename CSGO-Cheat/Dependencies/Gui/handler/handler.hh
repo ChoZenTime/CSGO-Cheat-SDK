@@ -137,5 +137,10 @@ namespace fgui {
 			
 			m_notifications->add_notification(notification_text, animation_type);
 		}
+
+		inline bool doneRendering()
+		{
+			return m_notifications->queueEmpty();
+		}
 	}
 }

@@ -28,8 +28,14 @@ void Cheat::Core::Menu::render()
 		ADD_GROUPBOX(container["#visualsGroupBox"], 172, 14, "PLAYERS", 244, 342, Configuration::menuFont, container["#window"], 1, false, false, false);
 		ADD_CONTROLLER(container["#visualsGroupBox"], tabs["#tabPanel"]);
 		ADD_CHECKBOX(checkbox["#visualsCheckbox"], 8, 14, "ENABLED", "vars.visuals", Configuration::menuFont, container["#visualsGroupBox"], 0);
-		ADD_CHECKBOX(checkbox["#healthCheckbox"], 8, 32, "TEAM", "vars.team", Configuration::menuFont, container["#visualsGroupBox"], 0);
-
+		ADD_CHECKBOX(checkbox["#enemyCheckbox"], 8, 32, "ENEMY", "vars.enemy", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#teamCheckbox"], 8, 50, "TEAM", "vars.team", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#boxCheckbox"], 8, 68, "BOX", "vars.box", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#healthCheckbox"], 8, 86, "HEALTH", "vars.health", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#armorCheckbox"], 8, 104, "ARMOR", "vars.armor", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#nameCheckbox"], 8, 122, "NAME", "vars.name", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#wallsCheckbox"], 8, 140, "THROUGH WALLS", "vars.walls", Configuration::menuFont, container["#visualsGroupBox"], 0);
+		
 		ADD_GROUPBOX(container["#worldGroupBox"], 434, 14, "WORLD", 244, 342, Configuration::menuFont, container["#window"], 1, false, false, false);
 		ADD_CONTROLLER(container["#worldGroupBox"], tabs["#tabPanel"]);
 		ADD_CHECKBOX(checkbox["#watermarkCheckBox"], 8, 14, "WATERMARK", "vars.watermark", Configuration::menuFont, container["#worldGroupBox"], 0);
@@ -43,5 +49,7 @@ void Cheat::Core::Menu::render()
 		ADD_CHECKBOX(checkbox["#bunnyHopCheckBox"], 8, 32, "BUNNY HOP", "vars.bunnyHop", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_CHECKBOX(checkbox["#viewmodelFovCheckBox"], 8, 50, "VIEWMODEL", "vars.viewmodelFov", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_SLIDER(slider["#viewmodelFovSlider"], 8, 70, " ", 0.0f, 0.0f, 68.0f, "vars.viewmodelFovSlider", Configuration::menuFont, container["#miscGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#farViewmodelFovCheckBox"], 8, 88, "VIEWMODEL", "vars.farViewmodelFov", Configuration::menuFont, container["#miscGroupBox"], 0);
+		ADD_SLIDER(slider["#farViewmodelFovSlider"], 8, 108, " ", 0.0f, 0.0f, 68.0f, "vars.farViewmodelFovSlider", Configuration::menuFont, container["#miscGroupBox"], 0);
 	}
 }

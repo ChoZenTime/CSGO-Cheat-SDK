@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="Cheat\Cheat.hpp" />
     <ClInclude Include="Cheat\Configuration.hpp" />
+    <ClInclude Include="Cheat\Features\Chams\Chams.hpp" />
     <ClInclude Include="Cheat\Features\Features.hpp" />
     <ClInclude Include="Cheat\Features\Misc\Misc.hpp" />
     <ClInclude Include="Cheat\Features\Visuals\Visuals.hpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="SDK\Enums\ClientFrameStage.hpp" />
     <ClInclude Include="SDK\Enums\Flags.hpp" />
     <ClInclude Include="SDK\Enums\Fonts.hpp" />
+    <ClInclude Include="SDK\Enums\Material.hpp" />
     <ClInclude Include="SDK\Enums\Move.hpp" />
     <ClInclude Include="SDK\Enums\SendPropType.hpp" />
     <ClInclude Include="SDK\Enums\WeaponType.hpp" />
@@ -247,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cheat\Cheat.cpp" />
+    <ClCompile Include="Cheat\Features\Chams\Chams.cpp" />
     <ClCompile Include="Cheat\Features\Misc\Misc.cpp" />
     <ClCompile Include="Cheat\Features\Visuals\Visuals.cpp" />
     <ClCompile Include="Cheat\Memory.cpp" />

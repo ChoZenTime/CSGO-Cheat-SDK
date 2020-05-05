@@ -30,5 +30,7 @@ void Cheat::Core::attach(const HMODULE module)
 
 	fgui::handler::call_notification("[ - ] FAIL PRIVATE - UNINJECTED", fgui::animation_type::LINEAR);
 
+	while (!fgui::handler::doneRendering()) {}
+
 	detach(module);
 }

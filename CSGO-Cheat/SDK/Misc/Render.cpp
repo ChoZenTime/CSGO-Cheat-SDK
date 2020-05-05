@@ -1,6 +1,7 @@
 #include "Render.hpp"
 #include "Macros.hpp"
 #include "../../Cheat/Configuration.hpp"
+#include "../../Cheat/Interfaces.hpp"
 
 namespace Cheat::SDK::Misc
 {

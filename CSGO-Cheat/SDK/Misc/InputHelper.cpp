@@ -24,8 +24,8 @@ namespace Cheat::SDK::Misc
 
 	void setupInputFunctions()
 	{
-		fgui::input.get_key_state = getKeyState;
-		fgui::input.get_scroll_delta = getScrollDelta;
+		fgui::input.get_key_state      = getKeyState;
+		fgui::input.get_scroll_delta   = getScrollDelta;
 		fgui::input.get_mouse_position = getMousePosition;
 	}
 }

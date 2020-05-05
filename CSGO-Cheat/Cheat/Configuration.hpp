@@ -25,4 +25,9 @@ namespace Configuration
 
 	const fgui::element_font menuFont = {"Japanese", 10, fgui::external::font_flags::ANTIALIAS, false};
 	const fgui::element_font iconFont = {"Japanese", 12, fgui::external::font_flags::ANTIALIAS, false};
+
+	const fgui::color nameColor   = {255, 255, 255};
+	const fgui::color healthColor = {255, 255, 255};
+	const fgui::color boxColor    = {255, 255, 255};
+	const fgui::color armorColor  = {255, 255, 255};
 }

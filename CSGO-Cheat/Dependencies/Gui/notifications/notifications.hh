@@ -68,6 +68,11 @@ namespace fgui {
             return m_font;
         }
 
+        [[nodiscard]] bool queueEmpty() const noexcept
+        {
+            return m_info.empty();
+        }
+
         // handle notification updates
         void update();
 

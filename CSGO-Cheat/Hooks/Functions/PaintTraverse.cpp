@@ -1,4 +1,5 @@
 #include "../Hooks.hpp"
+#include "../../Cheat/Interfaces.hpp"
 #include "../../Cheat/Features/Features.hpp"
 
 namespace Cheat::Core::Hooks

@@ -7,7 +7,7 @@ void Misc::bunnyHop(Cheat::SDK::Interface::UserCmd* cmd)
 {
 	if (!Cheat::Core::Menu::checkbox["#bunnyHopCheckBox"]->get_bool()) return;
 
-	static auto localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
+	static auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
 
 	if (!localPlayer) return;
 
@@ -21,3 +21,4 @@ void Misc::bunnyHop(Cheat::SDK::Interface::UserCmd* cmd)
 		}
 	}
 }
+

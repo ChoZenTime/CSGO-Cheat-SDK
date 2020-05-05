@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../Cheat/Interfaces.hpp"
 #include "../../Dependencies/Gui/FGUI.hh"
 
 #include <vector>
