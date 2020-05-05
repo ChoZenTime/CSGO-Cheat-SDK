@@ -32,15 +32,6 @@ void Visuals::viewmodel(Cheat::SDK::Interface::ViewSetup* viewSetup)
 	viewSetup->viewModelFov += Cheat::Core::Menu::checkbox["#viewmodelFovCheckBox"]->get_bool() && !localPlayer->scoped() ? Cheat::Core::Menu::slider["#viewmodelFovSlider"]->get_value() : 0.0f;
 }
 
-void Visuals::farViewmodel(Cheat::SDK::Interface::ViewSetup* viewSetup)
-{
-	auto *localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
-
-	if (!localPlayer) return;
-
-	viewSetup->farViewModel += Cheat::Core::Menu::checkbox["#farViewmodelFovCheckBox"]->get_bool() && !localPlayer->scoped() ? Cheat::Core::Menu::slider["#viewmodelFovSlider"]->get_value() : 0.0f;
-}
-
 void Visuals::grenadePreview()
 {	
 	static auto* grenadePreview = Cheat::Core::Interface::getInterfaces.cvar->findCvar("cl_grenadepreview");
@@ -91,7 +82,7 @@ void Visuals::esp()
 				
 				if (Cheat::Core::Menu::checkbox["#nameCheckbox"]->get_bool())
 				{
-					//Cheat::SDK::Misc::text(screen.x, screen.y, Configuration::nameColor, Cheat::SDK::Misc::fonts[(CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Font::Visuals))], playerInfo.name);
+				//Cheat::SDK::Misc::text(screen.x, screen.y, Configuration::nameColor, Cheat::SDK::Misc::fonts[(CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Font::Visuals))], playerInfo.name);
 				}
 
 				if (Cheat::Core::Menu::checkbox["#armorCheckbox"]->get_bool())

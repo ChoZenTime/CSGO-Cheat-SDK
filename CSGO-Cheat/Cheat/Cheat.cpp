@@ -13,7 +13,7 @@ void Cheat::Core::detach(const HMODULE module)
 
 void Cheat::Core::attach(const HMODULE module)
 {
-	Interface::Interfaces{};
+	Interface::Interfaces {};
 	Memory::Memory {};
 
 	SDK::Misc::getNetvarTree = std::make_unique<SDK::Misc::NetvarTree>();

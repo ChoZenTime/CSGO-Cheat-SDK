@@ -49,7 +49,11 @@ void Cheat::Core::Menu::render()
 		ADD_CHECKBOX(checkbox["#bunnyHopCheckBox"], 8, 32, "BUNNY HOP", "vars.bunnyHop", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_CHECKBOX(checkbox["#viewmodelFovCheckBox"], 8, 50, "VIEWMODEL", "vars.viewmodelFov", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_SLIDER(slider["#viewmodelFovSlider"], 8, 70, " ", 0.0f, 0.0f, 68.0f, "vars.viewmodelFovSlider", Configuration::menuFont, container["#miscGroupBox"], 0);
-		ADD_CHECKBOX(checkbox["#farViewmodelFovCheckBox"], 8, 88, "VIEWMODEL", "vars.farViewmodelFov", Configuration::menuFont, container["#miscGroupBox"], 0);
-		ADD_SLIDER(slider["#farViewmodelFovSlider"], 8, 108, " ", 0.0f, 0.0f, 68.0f, "vars.farViewmodelFovSlider", Configuration::menuFont, container["#miscGroupBox"], 0);
+	}
+
+	ADD_TAB(tabs["#tabPanel"], "SETTINGS");
+	{
+		ADD_GROUPBOX(container["#settingsGroupBox"], 172, 14, "SETTINGS", 244, 342, Configuration::menuFont, container["#window"], 3, false, false, false);
+		ADD_CONTROLLER(container["#settingsGroupBox"], tabs["#tabPanel"]);
 	}
 }

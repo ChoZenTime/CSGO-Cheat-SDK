@@ -11,6 +11,10 @@
 #include <memory>
 
 // framework includes
+#include "../../../Cheat/Configuration.hpp"
+
+
+#include "../controls/colorlist.hh"
 #include "../controls/element.hh"
 #include "../controls/container.hh"
 #include "../dependencies/color.hh"
@@ -71,7 +75,7 @@ namespace fgui {
 		std::array<fgui::color, 4> spinner = { fgui::color(28, 28, 28), fgui::color(74, 74, 74), fgui::color(36, 36, 36), fgui::color(48, 48, 48) };
 		std::array<fgui::color, 5> tabs = { fgui::color(28, 28, 28), fgui::color(15, 15, 15), fgui::color(40, 40, 40), fgui::color(35, 35, 35), fgui::color(60, 60, 60) };
 		std::array<fgui::color, 4> textbox = { fgui::color(28, 28, 28), fgui::color(74, 74, 74), fgui::color(36, 36, 36), fgui::color(48, 48, 48) };
-		std::array<fgui::color, 5> window = { fgui::color(36, 36, 36), fgui::color(40, 40, 40), fgui::color(55, 55, 55), fgui::color(74, 74, 74), fgui::color(70, 70, 70) };
+		std::array<fgui::color, 5> window = { fgui::color(246, 190, 244) , fgui::color(40, 40, 40), fgui::color(40, 40, 40), fgui::color(70, 70, 70), fgui::color(70, 70, 70) };// 55
 	};
 
 	// Man that's nasty. I should probably remake this as soon as possible.
