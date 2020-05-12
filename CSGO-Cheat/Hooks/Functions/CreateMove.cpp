@@ -17,6 +17,8 @@ namespace Cheat::Core::Hooks
 			Misc::bunnyHop(cmd);
 			Misc::autoStrafe(cmd);
 			Misc::moonWalk(cmd);
+			Misc::edgeJump(cmd);
+			Misc::noDuckCooldown(cmd);
 		}
 
 		return false;

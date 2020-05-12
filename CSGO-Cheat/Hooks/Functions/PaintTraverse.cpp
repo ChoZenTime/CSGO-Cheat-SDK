@@ -24,6 +24,7 @@ namespace Cheat::Core::Hooks
 		{
 			Visuals::esp();
 			Visuals::sniperCrosshair();
+			Misc::disablePostProcessing();
 		}		
 	}
 }

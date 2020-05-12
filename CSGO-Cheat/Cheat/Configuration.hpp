@@ -11,6 +11,9 @@ namespace Configuration
 	constexpr auto menuOpen = fgui::external::KEY_PAGEUP;
 	constexpr auto exitThreadKey = VK_NEXT;  // Page down
 
+	constexpr auto edgeJumpKey = 0x47;       // G
+
+
 	constexpr auto menuHeight = 700;
 	constexpr auto menuWidth  = 400;
 

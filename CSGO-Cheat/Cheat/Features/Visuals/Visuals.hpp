@@ -12,5 +12,4 @@ namespace Visuals
 	void sniperCrosshair();
 	void viewmodelFov(Cheat::SDK::Interface::ViewSetup* viewSetup);
 	void skyChanger();
-	void noScopeOverlay();
 }

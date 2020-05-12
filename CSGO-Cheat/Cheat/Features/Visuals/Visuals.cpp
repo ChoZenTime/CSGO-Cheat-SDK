@@ -164,31 +164,3 @@ void Visuals::skyChanger()
 	auto* sky = Cheat::Core::Interface::getInterfaces.cvar->findCvar("office");
 	sky->setValue("italy");
 }
-
-// TODO: Remove scope and call noScopeOverlay
-void Visuals::noScopeOverlay()
-{
-	if (!Cheat::Core::Menu::checkbox["#noScopeCheckBox"]->get_bool()) return;
-
-	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
-	
-	if (!localPlayer) return;
-	if (!localPlayer->health() > 0) return;
-	
-	std::int32_t screenHeight {};
-	std::int32_t screenWidth  {};
-
-	std::int32_t centerScreenHeight {};
-	std::int32_t centerScreenWidth  {};
-	
-	Cheat::Core::Interface::getInterfaces.surface->getScreenSize(screenHeight, screenWidth);
-
-	centerScreenHeight = screenHeight / 2;
-	centerScreenWidth  = screenWidth  / 2;
-	
-	if (localPlayer->scoped())
-	{
-		Cheat::SDK::Misc::line(0, centerScreenHeight, screenWidth, centerScreenHeight, Configuration::noScopeColor);
-		Cheat::SDK::Misc::line(centerScreenWidth, 0, centerScreenWidth, screenHeight, Configuration::noScopeColor);
-	}
-}
