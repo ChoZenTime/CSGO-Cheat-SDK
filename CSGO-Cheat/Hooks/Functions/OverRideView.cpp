@@ -9,7 +9,6 @@ namespace Cheat::Core::Hooks
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
 			Visuals::viewmodel(viewSetup);
-			//Visuals::farViewmodel(viewSetup);
 		}
 
 		GET_ORIGINAL_FUNCTION(clientMode, 18, void(__thiscall*)(std::uintptr_t, SDK::Interface::ViewSetup*), ecx, viewSetup);

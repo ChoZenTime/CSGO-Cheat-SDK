@@ -1,7 +1,7 @@
 #include "Cheat.hpp"
 #include "Configuration.hpp"
-#include "Memory.hpp"
 #include "../Hooks/Hooks.hpp"
+#include "../Memory/Memory.hpp"
 #include "../Menu/Menu.hpp"
 
 void Cheat::Core::detach(const HMODULE module)
@@ -25,7 +25,7 @@ void Cheat::Core::attach(const HMODULE module)
 	Menu::render();
 
 	fgui::handler::call_notification("[ - ] FAIL PRIVATE - INJECTED", fgui::animation_type::LINEAR);
-
+	
 	while (!GetAsyncKeyState(Configuration::exitThreadKey)) {}
 
 	fgui::handler::call_notification("[ - ] FAIL PRIVATE - UNINJECTED", fgui::animation_type::LINEAR);

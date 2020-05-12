@@ -19,7 +19,7 @@ namespace Cheat::SDK::Interface
 
 		bool isCameraInThirdPerson {};
 
-		std::byte pad3 {};
+		PAD(pad3, 1) {};
 
 		Misc::Vector cameraOffset {};
 	};

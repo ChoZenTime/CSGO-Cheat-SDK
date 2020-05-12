@@ -13,8 +13,10 @@ namespace Cheat::Core::Hooks
 
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-			//Visuals::grenadePreview();
+			Misc::noFlash();
 			Misc::bunnyHop(cmd);
+			Misc::autoStrafe(cmd);
+			Misc::moonWalk(cmd);
 		}
 
 		return false;

@@ -161,12 +161,14 @@
   <ItemGroup>
     <ClInclude Include="Cheat\Cheat.hpp" />
     <ClInclude Include="Cheat\Configuration.hpp" />
+    <ClInclude Include="Cheat\Features\Aimbot\Aimbot.hpp" />
     <ClInclude Include="Cheat\Features\Chams\Chams.hpp" />
     <ClInclude Include="Cheat\Features\Features.hpp" />
     <ClInclude Include="Cheat\Features\Misc\Misc.hpp" />
+    <ClInclude Include="Cheat\Features\Triggerbot\Triggerbot.hpp" />
     <ClInclude Include="Cheat\Features\Visuals\Visuals.hpp" />
     <ClInclude Include="Cheat\Interfaces.hpp" />
-    <ClInclude Include="Cheat\Memory.hpp" />
+    <ClInclude Include="Memory\Memory.hpp" />
     <ClInclude Include="Dependencies\Fmt\chrono.hh" />
     <ClInclude Include="Dependencies\Fmt\color.hh" />
     <ClInclude Include="Dependencies\Fmt\compile.hh" />
@@ -236,7 +238,7 @@
     <ClInclude Include="SDK\Interface\UserCmd.hpp" />
     <ClInclude Include="SDK\Interface\UtlVector.hpp" />
     <ClInclude Include="SDK\Interface\ViewSetup.hpp" />
-    <ClInclude Include="SDK\Interface\WeaponData.hpp" />
+    <ClInclude Include="SDK\Math\Math.hpp" />
     <ClInclude Include="SDK\Misc\CaptureInterface.hpp" />
     <ClInclude Include="SDK\Misc\InputHelper.hpp" />
     <ClInclude Include="SDK\Misc\Macros.hpp" />
@@ -249,10 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cheat\Cheat.cpp" />
+    <ClCompile Include="Cheat\Features\Aimbot\Aimbot.cpp" />
     <ClCompile Include="Cheat\Features\Chams\Chams.cpp" />
     <ClCompile Include="Cheat\Features\Misc\Misc.cpp" />
+    <ClCompile Include="Cheat\Features\Triggerbot\Triggerbot.cpp" />
     <ClCompile Include="Cheat\Features\Visuals\Visuals.cpp" />
-    <ClCompile Include="Cheat\Memory.cpp" />
+    <ClCompile Include="Memory\Memory.cpp" />
     <ClCompile Include="Dependencies\Gui\controls\button.cc" />
     <ClCompile Include="Dependencies\Gui\controls\checkbox.cc" />
     <ClCompile Include="Dependencies\Gui\controls\colorlist.cc" />
@@ -279,9 +283,16 @@
     <ClCompile Include="Hooks\Hooks.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="SDK\Math\Math.cpp" />
     <ClCompile Include="SDK\Misc\InputHelper.cpp" />
     <ClCompile Include="SDK\Misc\NetvarTree.cpp" />
     <ClCompile Include="SDK\Misc\Render.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

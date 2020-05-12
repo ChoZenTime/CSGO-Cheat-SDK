@@ -22,8 +22,8 @@ namespace Cheat::Core::Hooks
 		
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
-			// Game rendering
-			//Visuals::esp();
+			Visuals::esp();
+			Visuals::sniperCrosshair();
 		}		
 	}
 }

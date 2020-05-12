@@ -1,6 +1,6 @@
 #include "Hooks.hpp"
 #include "../Cheat/Interfaces.hpp"
-#include "../Cheat/Memory.hpp"
+#include "../Memory/Memory.hpp"
 
 namespace Cheat::Core::Hooks
 {

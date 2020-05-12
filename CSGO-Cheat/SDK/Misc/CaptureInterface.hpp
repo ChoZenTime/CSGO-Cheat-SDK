@@ -9,7 +9,7 @@ namespace Cheat::SDK::Misc
 {
 	template <typename T> static T captureInterface(const char* moduleName, const char* interfaceName)
 	{
-		const auto moduleHandle = GetModuleHandleA(moduleName);
+		auto *const moduleHandle = GetModuleHandleA(moduleName);
 
 		if (!moduleHandle) return {};
 		
