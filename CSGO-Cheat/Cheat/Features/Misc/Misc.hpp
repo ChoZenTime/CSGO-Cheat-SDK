@@ -12,4 +12,7 @@ namespace Misc
 	void disablePostProcessing();
 	void noFlash();
 	void showRank();
+	void grayMap();
+	void tazerEffect();
+	void skeleton();
 }

@@ -51,45 +51,19 @@ void Misc::autoStrafe(Cheat::SDK::Interface::UserCmd* cmd)
 {
 	if (!Cheat::Core::Menu::checkbox["#autoStrafeCheckBox"]->get_bool()) return;
 
-	bool backward {};
-
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward))
-	{
-		backward = false;
-	}
-	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back))
-	{
-		backward = true;
-	}
-
 	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
 
 	if (!localPlayer) return;
 	if (!localPlayer->health() > 0) return;
 
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward)) return;
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back))    return;
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft))    return;
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight))   return;
-	
 	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Move::Ladder)) return;
-
-
-	if (cmd->mouseX <= 1 && cmd->mouseX >= -1) return;
+	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Move::NoClip)) return;
 
 	if (localPlayer->flags() & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Flags::OnGround)) return;
 
-	if (backward)
-	{
-		cmd->sideMove = cmd->mouseX < 0.f ? 450.f : -450.f;
-	}
-	else
-	{
-		cmd->sideMove = cmd->mouseX < 0.f ? -450.0f : 450.0f;
-	}
+	cmd->sideMove = cmd->mouseX < 0.f ? -450.f : 450.f;
 }
 
-// TODO: Fix going left
 void Misc::moonWalk(Cheat::SDK::Interface::UserCmd* cmd)
 {
 	if (!Cheat::Core::Menu::checkbox["#moonWalkCheckBox"]->get_bool()) return;
@@ -168,4 +142,44 @@ void Misc::disablePostProcessing()
 	}
 }
 
+void Misc::grayMap()
+{
+	auto* grayMap = Cheat::Core::Interface::getInterfaces.cvar->findCvar("mat_drawgray");
+	
+	if (Cheat::Core::Menu::checkbox["#grayMapCheckBox"]->get_bool())
+	{
+		grayMap->setValue(1);
+	}
+	else
+	{
+		grayMap->setValue(0);
+	}
+}
 
+void Misc::skeleton()
+{
+	auto* skeleton = Cheat::Core::Interface::getInterfaces.cvar->findCvar("enable_skeleton_draw");
+
+	if (Cheat::Core::Menu::checkbox["#skeletonCheckBox"]->get_bool())
+	{
+		skeleton->setValue(1);
+	}
+	else
+	{
+		skeleton->setValue(0);
+	}
+}
+
+void Misc::tazerEffect()
+{
+	auto* tazerEffect = Cheat::Core::Interface::getInterfaces.cvar->findCvar("sv_party_mode");
+
+	if (Cheat::Core::Menu::checkbox["#tazerEffectCheckBox"]->get_bool())
+	{
+		tazerEffect->setValue(1);
+	}
+	else
+	{
+		tazerEffect->setValue(0);
+	}
+}

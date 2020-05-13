@@ -19,6 +19,9 @@ namespace Cheat::Core::Hooks
 			Misc::moonWalk(cmd);
 			Misc::edgeJump(cmd);
 			Misc::noDuckCooldown(cmd);
+			Misc::grayMap();
+			Misc::skeleton();
+			Misc::tazerEffect();
 		}
 
 		return false;

@@ -42,6 +42,9 @@ void Cheat::Core::Menu::render()
 		ADD_CONTROLLER(container["#worldGroupBox"], tabs["#tabPanel"]);
 		ADD_CHECKBOX(checkbox["#watermarkCheckBox"], 8, 14, "WATERMARK", "vars.watermark", Configuration::menuFont, container["#worldGroupBox"], 0);
 		ADD_CHECKBOX(checkbox["#skyChangerCheckBox"], 8, 32, "SKY CHANGER", "vars.skyChanger", Configuration::menuFont, container["#worldGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#grayMapCheckBox"], 8, 50, "GRAY MAP", "vars.grayMap", Configuration::menuFont, container["#worldGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#skeletonCheckBox"], 8, 68, "SKELETON", "vars.skeleton", Configuration::menuFont, container["#worldGroupBox"], 0);
+		ADD_CHECKBOX(checkbox["#tazerEffectCheckBox"], 8, 86, "TAZER EFFECT", "vars.tazerEffect", Configuration::menuFont, container["#worldGroupBox"], 0);
 	}
 
 	ADD_TAB(tabs["#tabPanel"], "MISC");
@@ -60,7 +63,6 @@ void Cheat::Core::Menu::render()
 		ADD_CHECKBOX(checkbox["#edgeJumpCheckBox"], 8, 178, "EDGE JUMP", "vars.edgeJump", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_CHECKBOX(checkbox["#disablePostProcessingCheckBox"], 8, 196, "DISABLE POST PROCESSING", "vars.disablePostProcessing", Configuration::menuFont, container["#miscGroupBox"], 0);
 		ADD_CHECKBOX(checkbox["#noDuckCooldownCheckBox"], 8, 214, "NO DUCK COOLDOWN", "vars.noDuckCooldown", Configuration::menuFont, container["#miscGroupBox"], 0);
-
 	}
 
 	ADD_TAB(tabs["#tabPanel"], "SETTINGS");
