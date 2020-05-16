@@ -6,7 +6,6 @@ namespace Misc
 {
 	void bunnyHop(Cheat::SDK::Interface::UserCmd*);
 	void autoStrafe(Cheat::SDK::Interface::UserCmd*);
-	void moonWalk(Cheat::SDK::Interface::UserCmd*);
 	void edgeJump(Cheat::SDK::Interface::UserCmd*);
 	void noDuckCooldown(Cheat::SDK::Interface::UserCmd*);
 	void disablePostProcessing();
@@ -14,5 +13,5 @@ namespace Misc
 	void showRank();
 	void grayMap();
 	void tazerEffect();
-	void skeleton();
+	void moonWalk(Cheat::SDK::Interface::UserCmd*);
 }

@@ -64,6 +64,7 @@ void Visuals::esp()
 			{
 				if (Cheat::Core::Menu::checkbox["#boxCheckbox"]->get_bool())
 				{
+					// TODO: Need world to screen function
 					Cheat::SDK::Misc::outlinedRectangle(screen.x, screen.y - 50, 25, 50, Configuration::boxColor);
 				}
 				
@@ -132,8 +133,7 @@ void Visuals::sniperCrosshair()
 void Visuals::viewmodelFov(Cheat::SDK::Interface::ViewSetup* viewSetup)
 {
 	if (!Cheat::Core::Menu::checkbox["#viewmodelFovCheckBox"]->get_bool()) return;
-
-	// TODO: Update viewSetup structure, add x and y	
+	
 	auto* viewmodelFov = Cheat::Core::Interface::getInterfaces.cvar->findCvar("viewmodel_fov");
 	
 	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
@@ -146,7 +146,7 @@ void Visuals::viewmodelFov(Cheat::SDK::Interface::ViewSetup* viewSetup)
 
 void Visuals::grenadePreview()
 {
-	// Does not work
+	// Fix
 	auto* grenadePreview = Cheat::Core::Interface::getInterfaces.cvar->findCvar("cl_grenadepreview");
 	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
 
@@ -158,9 +158,6 @@ void Visuals::grenadePreview()
 
 void Visuals::skyChanger()
 {
-	// Does not work
 	if (!Cheat::Core::Menu::checkbox["#skyChangerCheckBox"]->get_bool()) return;
 
-	auto* sky = Cheat::Core::Interface::getInterfaces.cvar->findCvar("office");
-	sky->setValue("italy");
 }

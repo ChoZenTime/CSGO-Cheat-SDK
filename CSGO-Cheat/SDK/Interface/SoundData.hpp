@@ -10,15 +10,15 @@ namespace Cheat::SDK::Interface
 	{
 		PAD(pad1, 4) {};
 		
-		std::int32_t entityIndex {};
-		std::int32_t channel     {};
+		std::int32_t entityIndex;
+		std::int32_t channel;
 
-		const char* soundEntry {};
+		const char* soundEntry;
 
-		PAD(pad2, 8) {};
+		PAD(pad2, 8);
 
-		float volume {};
+		float volume;
 
-		PAD(pad3, 44) {};
+		PAD(pad3, 44);
 	};
 }

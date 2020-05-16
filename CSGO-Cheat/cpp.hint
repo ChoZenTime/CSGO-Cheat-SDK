@@ -4,3 +4,5 @@
 #define VFUNC(functionName, index, type, __VA_ARGS__) auto functionName { return Cheat::SDK::Misc::vfuncFromIndex<type>(this, index)(this, __VA_ARGS__); };
 #define VFUNC(functionName, index, type, __VA_ARGS__) auto functionName { return Cheat::SDK::Misc::vfuncFromIndex<type>(this, index)(this, __VA_ARGS__); };
 #define OFFSET(functionName, type, offset) type& (functionName) { return *reinterpret_cast<type*>(std::uintptr_t(this) + offset); };
+#define PAD(variable_name, size) std::byte variable_name[size]
+#define NETVAR(functionName, type, __VA_ARGS__) type& functionName { return *reinterpret_cast<type*>(reinterpret_cast<std::uintptr_t>(this) + Cheat::SDK::Misc::getNetvarTree->getOffset(__VA_ARGS__)); };

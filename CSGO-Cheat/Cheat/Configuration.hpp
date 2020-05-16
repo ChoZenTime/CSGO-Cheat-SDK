@@ -43,5 +43,5 @@ namespace Configuration
 	const std::uint32_t crosshairRadius  = 3;
 	const std::uint32_t crosshairSegment = 50;
 
-	const fgui::color noScopeColor = { 255, 255, 255 };
+	const fgui::color noScopeColor = {255, 255, 255};
 }

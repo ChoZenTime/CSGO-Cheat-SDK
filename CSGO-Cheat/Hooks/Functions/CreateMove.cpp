@@ -16,12 +16,11 @@ namespace Cheat::Core::Hooks
 			Misc::noFlash();
 			Misc::bunnyHop(cmd);
 			Misc::autoStrafe(cmd);
-			Misc::moonWalk(cmd);
 			Misc::edgeJump(cmd);
 			Misc::noDuckCooldown(cmd);
 			Misc::grayMap();
-			Misc::skeleton();
 			Misc::tazerEffect();
+			Misc::moonWalk(cmd);
 		}
 
 		return false;

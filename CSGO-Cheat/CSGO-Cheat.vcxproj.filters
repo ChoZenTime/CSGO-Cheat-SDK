@@ -405,7 +405,4 @@
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="TODO.txt" />
-  </ItemGroup>
 </Project>

@@ -1,4 +1,0 @@
-[ - ] Learn how to use color picker and group boxed
-[ - ] Hook mouse input from windows API (wnproc)
-
-[ - ] Add chams

@@ -64,41 +64,6 @@ void Misc::autoStrafe(Cheat::SDK::Interface::UserCmd* cmd)
 	cmd->sideMove = cmd->mouseX < 0.f ? -450.f : 450.f;
 }
 
-void Misc::moonWalk(Cheat::SDK::Interface::UserCmd* cmd)
-{
-	if (!Cheat::Core::Menu::checkbox["#moonWalkCheckBox"]->get_bool()) return;
-
-	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
-
-	if (!(localPlayer->flags() & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Flags::OnGround))) return;
-
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward))
-	{
-		cmd->forwardMove = 450;
-		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
-	}
-	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back))
-	{
-		cmd->forwardMove = -450;
-		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
-	}
-
-	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft))
-	{
-		cmd->sideMove = -450;
-		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
-	}
-	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight))
-	{
-		cmd->sideMove = 450;
-		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
-	}
-}
-
 void Misc::edgeJump(Cheat::SDK::Interface::UserCmd* cmd)
 {
 	if (!Cheat::Core::Menu::checkbox["#edgeJumpCheckBox"]->get_bool()) return;
@@ -110,7 +75,7 @@ void Misc::edgeJump(Cheat::SDK::Interface::UserCmd* cmd)
 	if (!localPlayer) return;
 	if (!localPlayer->health() > 0) return;
 
-	if (!localPlayer->flags() & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Flags::OnGround))
+	if (!(localPlayer->flags() & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Flags::OnGround)))
 	{
 		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Jump);
 	}
@@ -156,20 +121,6 @@ void Misc::grayMap()
 	}
 }
 
-void Misc::skeleton()
-{
-	auto* skeleton = Cheat::Core::Interface::getInterfaces.cvar->findCvar("enable_skeleton_draw");
-
-	if (Cheat::Core::Menu::checkbox["#skeletonCheckBox"]->get_bool())
-	{
-		skeleton->setValue(1);
-	}
-	else
-	{
-		skeleton->setValue(0);
-	}
-}
-
 void Misc::tazerEffect()
 {
 	auto* tazerEffect = Cheat::Core::Interface::getInterfaces.cvar->findCvar("sv_party_mode");
@@ -181,5 +132,39 @@ void Misc::tazerEffect()
 	else
 	{
 		tazerEffect->setValue(0);
+	}
+}
+
+void Misc::moonWalk(Cheat::SDK::Interface::UserCmd* cmd)
+{
+	if (!Cheat::Core::Menu::checkbox["#moonWalkCheckBox"]->get_bool()) return;
+
+	auto* localPlayer = Cheat::Core::Interface::getInterfaces.clientEntity->getClientEntity(Cheat::Core::Interface::getInterfaces.engine->getLocalPlayer());
+	if (!(localPlayer->flags() & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Flags::OnGround))) return;
+
+	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward))
+	{
+		cmd->forwardMove = 450;
+		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
+	}
+	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back))
+	{
+		cmd->forwardMove = -450;
+		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
+	}
+
+	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft))
+	{
+		cmd->forwardMove = -450;
+		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
+	}
+	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight))
+	{
+		cmd->forwardMove = 450;
+		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
 	}
 }

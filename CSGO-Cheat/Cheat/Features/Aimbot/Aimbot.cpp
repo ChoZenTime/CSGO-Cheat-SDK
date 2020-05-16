@@ -4,7 +4,6 @@
 #include "../../../Menu/Menu.hpp"
 #include "../../../SDK/Math/Math.hpp"
 
-// TODO: Fix
 void Aimbot::rage(Cheat::SDK::Interface::UserCmd* cmd)
 {
 	if (!Cheat::Core::Menu::checkbox["#rageCheckbox"]->get_bool()) return;
@@ -44,7 +43,7 @@ Cheat::SDK::Interface::Entity* Aimbot::target()
 			if (newDelta < oldDelta)
 			{
 				oldDelta = newDelta;
-				target   = entity;    // Add index
+				target   = entity; 
 			}
 		}
 	}
