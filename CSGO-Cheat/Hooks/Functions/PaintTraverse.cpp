@@ -23,8 +23,8 @@ namespace Cheat::Core::Hooks
 		if (Interface::getInterfaces.engine->isConnected() && Interface::getInterfaces.engine->isInGame())
 		{
 			Visuals::esp();
-			Visuals::sniperCrosshair();
-			Misc::disablePostProcessing();
+			//Visuals::sniperCrosshair();
+			//Misc::disablePostProcessing();
 		}		
 	}
 }

@@ -14,4 +14,5 @@ namespace Misc
 	void grayMap();
 	void tazerEffect();
 	void moonWalk(Cheat::SDK::Interface::UserCmd*);
+	void clampViewAngles(Cheat::SDK::Interface::UserCmd*);
 }

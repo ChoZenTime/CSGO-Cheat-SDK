@@ -13,7 +13,6 @@ namespace Configuration
 
 	constexpr auto edgeJumpKey = 0x47;       // G
 
-
 	constexpr auto menuHeight = 700;
 	constexpr auto menuWidth  = 400;
 
@@ -44,4 +43,6 @@ namespace Configuration
 	const std::uint32_t crosshairSegment = 50;
 
 	const fgui::color noScopeColor = {255, 255, 255};
+
+	const std::string clanTag = "Fail Private";
 }

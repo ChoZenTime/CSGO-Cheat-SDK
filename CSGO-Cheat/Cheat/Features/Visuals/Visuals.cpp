@@ -116,6 +116,7 @@ void Visuals::esp()
 void Visuals::sniperCrosshair()
 {
 	// TODO: Add sniper weapon checks
+	// Make a better crosshair
 	if (!Cheat::Core::Menu::checkbox["#sniperCrosshairCheckBox"]->get_bool()) return;
 
 	std::int32_t screenWidth{}, screenHeight{};
@@ -160,4 +161,6 @@ void Visuals::skyChanger()
 {
 	if (!Cheat::Core::Menu::checkbox["#skyChangerCheckBox"]->get_bool()) return;
 
+	// Add
 }
+

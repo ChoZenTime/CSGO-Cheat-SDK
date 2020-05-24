@@ -1,5 +1,6 @@
 #include "Misc.hpp"
 #include "../../Interfaces.hpp"
+#include "../../../Memory/Memory.hpp"
 #include "../../../Menu/Menu.hpp"
 #include "../../../SDK/SDK.hpp"
 #include "../../../SDK/Misc/Vector.hpp"
@@ -146,25 +147,33 @@ void Misc::moonWalk(Cheat::SDK::Interface::UserCmd* cmd)
 	{
 		cmd->forwardMove = 450;
 		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t,  Cheat::SDK::Enum::Button::Back);
 	}
 	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back))
 	{
 		cmd->forwardMove = -450;
 		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Back);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::Forward);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t,  Cheat::SDK::Enum::Button::Forward);
 	}
 
 	if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft))
 	{
 		cmd->forwardMove = -450;
 		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t,  Cheat::SDK::Enum::Button::MoveRight);
 	}
 	else if (cmd->buttons & CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight))
 	{
 		cmd->forwardMove = 450;
 		cmd->buttons &= ~CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveRight);
-		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t, Cheat::SDK::Enum::Button::MoveLeft);
+		cmd->buttons |= CONVERT_ENUM_TYPE(std::int32_t,  Cheat::SDK::Enum::Button::MoveLeft);
 	}
+}
+
+void Misc::clampViewAngles(Cheat::SDK::Interface::UserCmd* cmd)
+{
+	cmd->viewAngles.normalize();
+	cmd->viewAngles.x = std::clamp(cmd->viewAngles.x, -89.0f, 89.0f);
+	cmd->viewAngles.y = std::clamp(cmd->viewAngles.y, -180.0f, 180.0f);
+	cmd->viewAngles.z = 0.0f;
 }

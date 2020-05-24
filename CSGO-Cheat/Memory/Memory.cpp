@@ -1,5 +1,7 @@
 #include "Memory.hpp"
 
+#include <Psapi.h>
+
 bool Cheat::Core::Memory::valid(const std::uintptr_t pointer)
 {
 	MEMORY_BASIC_INFORMATION memoryInfo {};
@@ -39,4 +41,33 @@ void Cheat::Core::Memory::patch(BYTE* destination, BYTE* source, const uint16_t 
 
 	memcpy(destination, source, length);
 	VirtualProtect(destination, length, oldProtection, &oldProtection);
+}
+
+std::uintptr_t Cheat::Core::Memory::findPattern(const std::wstring_view moduleName, const BYTE* mask, const char* maskString)
+{
+	const auto moduleAddress = GetModuleHandle(moduleName.data());
+	MODULEINFO moduleInfo {};
+
+	GetModuleInformation(GetCurrentProcess(), reinterpret_cast<HMODULE>(moduleAddress), &moduleInfo, sizeof(MODULEINFO));
+
+	auto correctMask = [](const unsigned char* data, const unsigned char* mask, const char* maskString) -> bool
+	{
+		for (; *maskString; ++maskString, ++mask, ++data)
+		{
+			if (*maskString == 'x' && *mask != *data) return false;
+		}
+
+		return *maskString == 0;
+	};
+
+	// ReSharper disable once CppUseAuto
+	for (std::ptrdiff_t index = 0; index < moduleInfo.SizeOfImage; index += 1)
+	{
+		if (correctMask(reinterpret_cast<unsigned char*>(moduleAddress + index), mask, maskString))
+		{
+			return reinterpret_cast<std::uintptr_t>(moduleAddress) + index;
+		}
+	}
+
+	return 0;
 }
