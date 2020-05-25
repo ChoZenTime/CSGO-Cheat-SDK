@@ -8,7 +8,7 @@ namespace Cheat::SDK::Interface
 {
 	struct SoundData
 	{
-		PAD(pad1, 4) {};
+		PAD(pad1, 4);
 		
 		std::int32_t entityIndex;
 		std::int32_t channel;

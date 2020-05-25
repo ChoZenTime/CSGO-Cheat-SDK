@@ -8,7 +8,7 @@ namespace Cheat::SDK::Misc
 {
 	struct Vector
 	{
-		float x {}, y {}, z {};
+		float x, y, z;
 
 		explicit Vector(const float w = 0, const float h = 0, const float r = 0)
 		{

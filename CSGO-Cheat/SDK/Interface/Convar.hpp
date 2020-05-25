@@ -15,17 +15,17 @@ namespace Cheat::SDK::Interface
 		VFUNC(setValue(const float value), 15, void(__thiscall*)(void*, float), value)
 		VFUNC(setValue(const std::int32_t value), 16, void(__thiscall*)(void*, std::int32_t), value)
 
-		PAD(pad1, 24) {};
+		PAD(pad1, 24);
 
-		std::add_pointer_t<void()> changeCallback {};
+		std::add_pointer_t<void()> changeCallback;
 
-		Convar* parent {};
+		Convar* parent;
 
-		const char* defaultValue {};
+		const char* defaultValue;
 
-		char* string {};
+		char* string;
 
-		PAD(pad2, 28) {};
+		PAD(pad2, 28);
 
 		UtlVector<void()> onChangeCallbacks {};
 	};

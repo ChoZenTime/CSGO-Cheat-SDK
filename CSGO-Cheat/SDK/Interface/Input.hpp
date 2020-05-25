@@ -9,17 +9,17 @@ namespace Cheat::SDK::Interface
 {
 	struct Input
 	{
-		PAD(pad1, 12) {};
+		PAD(pad1, 12);
 
-		bool isTrackIrAvailable {};
-		bool isMouseInitialized {};
-		bool isMouseActive      {};
+		bool isTrackIrAvailable;
+		bool isMouseInitialized;
+		bool isMouseActive;
 
-		PAD(pad2, 158) {};
+		PAD(pad2, 158);
 
-		bool isCameraInThirdPerson {};
+		bool isCameraInThirdPerson;
 
-		PAD(pad3, 1) {};
+		PAD(pad3, 1);
 
 		Misc::Vector cameraOffset {};
 	};

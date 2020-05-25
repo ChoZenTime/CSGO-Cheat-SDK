@@ -41,8 +41,4 @@ namespace Configuration
 	const fgui::color   crosshairColor   = {55, 55, 55};
 	const std::uint32_t crosshairRadius  = 3;
 	const std::uint32_t crosshairSegment = 50;
-
-	const fgui::color noScopeColor = {255, 255, 255};
-
-	const std::string clanTag = "Fail Private";
 }
